@@ -19,7 +19,7 @@ Mplus output for select models
 |Correlated factors with methods factors|[Model VIII](https://github.com/rnj0nes/HCAP/blob/master/model-VIII.out)|
 |Model VIII, dropping immediate memory and delayed & recognition as single factor|[Model IX](https://github.com/rnj0nes/HCAP/blob/master/model-IX.out)|
 |Model IX, combine Set shifting and attention, speed|[Model X](https://github.com/rnj0nes/HCAP/blob/master/model-X.out)|
-|Second order factor model based on model XI|[Model XI](https://github.com/rnj0nes/HCAP/blob/master/model-XI.out)|
+|Second order factor model based on model X|[Model XI](https://github.com/rnj0nes/HCAP/blob/master/model-XI.out)|
 
 
 
