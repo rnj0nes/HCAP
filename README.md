@@ -17,9 +17,9 @@ Mplus output for select models
 |Executive functioning, single factor|[Model IIIA](https://github.com/rnj0nes/HCAP/blob/master/model-IIIA.out)|
 |Correlated factors|[Model VII](https://github.com/rnj0nes/HCAP/blob/master/model-VII.out)|
 |Correlated factors with methods factors|[Model VIII](https://github.com/rnj0nes/HCAP/blob/master/model-VIII.out)|
-|Model VIII, dropping immediate memory and delayed & recognition as single factor|[Model VIII](https://github.com/rnj0nes/HCAP/blob/master/model-IX.out)|
+|Model VIII, dropping immediate memory and delayed & recognition as single factor|[Model IX](https://github.com/rnj0nes/HCAP/blob/master/model-IX.out)|
 |Model IX, combine Set shifting and attention, speed|[Model X](https://github.com/rnj0nes/HCAP/blob/master/model-X.out)|
-|Second order factor model based on model XI|[Model X](https://github.com/rnj0nes/HCAP/blob/master/model-XI.out)|
+|Second order factor model based on model XI|[Model XI](https://github.com/rnj0nes/HCAP/blob/master/model-XI.out)|
 
 
 
