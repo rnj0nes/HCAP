@@ -6,4 +6,11 @@ Mplus output for select models
 |Model|out|
 |---|---|
 |Orientation, single factor model|[Model I](https://github.com/rnj0nes/HCAP/blob/master/model-I.out)|
-|Memory immediet episodic, single factor|[Model IIA](https://github.com/rnj0nes/HCAP/blob/master/model-IIA.out)|
+|Memory immediate episodic, single factor|[Model IIA](https://github.com/rnj0nes/HCAP/blob/master/model-IIA.out)|
+|Memory delayed episodic, single factor|[Model IIB](https://github.com/rnj0nes/HCAP/blob/master/model-IIB.out)|
+|Memory recognition, single factor|[Model IIIA](https://github.com/rnj0nes/HCAP/blob/master/model-IIIA.out)|
+|Set shifting, single factor|[Model III](https://github.com/rnj0nes/HCAP/blob/master/model-III.out)|
+|Attention, speed, single factor|[Model IV](https://github.com/rnj0nes/HCAP/blob/master/model-IV.out)|
+
+
+
