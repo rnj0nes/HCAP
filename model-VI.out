@@ -1,0 +1,323 @@
+Mplus VERSION 8.2 (Mac)
+MUTHEN & MUTHEN
+05/26/2020   9:10 AM
+
+INPUT INSTRUCTIONS
+
+  TITLE:
+    Variable List -
+
+    vdvis1z : vdvis1_z1 = (vdvis1 -        .001456089426)/         11.00291218
+    vdvis2 : MMSE copy polygons
+
+  DATA:
+    FILE = __000001.dat ;
+  VARIABLE:
+    NAMES =
+      vdvis1z vdvis2 ;
+    MISSING ARE ALL (-9999) ;
+    CATEGORICAL =
+      vdvis2
+      ;
+  ANALYSIS:
+  OUTPUT:
+     MODINDICES(-0);
+     RESIDUAL ;
+  stdyx  ;
+
+  MODEL:
+  vis by vdvis1z@1 vdvis2@1 ;
+
+
+
+
+*** WARNING
+  Data set contains cases with missing on all variables.
+  These cases were not included in the analysis.
+  Number of cases with missing on all variables:  29
+   1 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+
+Variable List -
+
+vdvis1z : vdvis1_z1 = (vdvis1 -        .001456089426)/         11.00291218
+vdvis2 : MMSE copy polygons
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                        3318
+
+Number of dependent variables                                    2
+Number of independent variables                                  0
+Number of continuous latent variables                            1
+
+Observed dependent variables
+
+  Continuous
+   VDVIS1Z
+
+  Binary and ordered categorical (ordinal)
+   VDVIS2
+
+Continuous latent variables
+   VIS
+
+
+Estimator                                                    WLSMV
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Parameterization                                             DELTA
+Link                                                        PROBIT
+
+Input data file(s)
+  __000001.dat
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns             3
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              VDVIS1Z       VDVIS2
+              ________      ________
+ VDVIS1Z        0.997
+ VDVIS2         0.987         0.990
+
+
+UNIVARIATE PROPORTIONS AND COUNTS FOR CATEGORICAL VARIABLES
+
+    VDVIS2
+      Category 1    0.467         1532.000
+      Category 2    0.533         1752.000
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     VDVIS1Z               0.743      -0.585       0.000    0.33%       0.545      0.636      0.727
+            3308.000       0.045      -0.162       1.000   21.61%       0.818      1.000
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+     WARNING:  THE RESIDUAL COVARIANCE MATRIX (THETA) IS NOT POSITIVE DEFINITE.
+     THIS COULD INDICATE A NEGATIVE VARIANCE/RESIDUAL VARIANCE FOR AN OBSERVED
+     VARIABLE, A CORRELATION GREATER OR EQUAL TO ONE BETWEEN TWO OBSERVED
+     VARIABLES, OR A LINEAR DEPENDENCY AMONG MORE THAN TWO OBSERVED VARIABLES.
+     CHECK THE RESULTS SECTION FOR MORE INFORMATION.
+     PROBLEM INVOLVING VARIABLE VDVIS1Z.
+
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                        4
+
+Chi-Square Test of Model Fit
+
+          Value                              0.000*
+          Degrees of Freedom                     0
+          P-Value                           0.0000
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.000
+          90 Percent C.I.                    0.000  0.000
+          Probability RMSEA <= .05           0.000
+
+CFI/TLI
+
+          CFI                                1.000
+          TLI                                1.000
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                            497.311
+          Degrees of Freedom                     1
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.000
+
+Optimum Function Value for Weighted Least-Squares Estimator
+
+          Value                     0.61156670D-10
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ VIS      BY
+    VDVIS1Z            1.000      0.000    999.000    999.000
+    VDVIS2             1.000      0.000    999.000    999.000
+
+ Intercepts
+    VDVIS1Z            0.743      0.004    182.192      0.000
+
+ Thresholds
+    VDVIS2$1          -0.084      0.022     -3.839      0.000
+
+ Variances
+    VIS                0.102      0.005     22.300      0.000
+
+ Residual Variances
+    VDVIS1Z           -0.057      0.004    -14.411      0.000
+
+
+STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ VIS      BY
+    VDVIS1Z            1.508      0.028     54.836      0.000
+    VDVIS2             0.319      0.007     44.600      0.000
+
+ Intercepts
+    VDVIS1Z            3.512      0.045     77.879      0.000
+
+ Thresholds
+    VDVIS2$1          -0.084      0.022     -3.839      0.000
+
+ Variances
+    VIS                1.000      0.000    999.000    999.000
+
+ Residual Variances
+    VDVIS1Z           -1.275    999.000    999.000    999.000
+
+
+R-SQUARE
+
+    Observed                                        Two-Tailed   Residual
+    Variable        Estimate       S.E.  Est./S.E.    P-Value    Variance
+
+    VDVIS1Z         Undefined   0.22751E+01
+    VDVIS2             0.102      0.005     22.300      0.000      0.898
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.166E-02
+       (ratio of smallest to largest eigenvalue)
+
+
+RESIDUAL OUTPUT
+
+
+     ESTIMATED MODEL AND RESIDUALS (OBSERVED - ESTIMATED)
+
+
+           Model Estimated Means/Intercepts/Thresholds
+              VDVIS1Z       VDVIS2$1
+              ________      ________
+                0.743        -0.084
+
+
+           Residuals for Means/Intercepts/Thresholds
+              VDVIS1Z       VDVIS2$1
+              ________      ________
+                0.000         0.000
+
+
+           Model Estimated Covariances/Correlations/Residual Correlations
+              VDVIS1Z       VDVIS2
+              ________      ________
+ VDVIS1Z        0.045
+ VDVIS2         0.102
+
+
+           Model Estimated Correlations/Residual Correlations
+              VDVIS1Z       VDVIS2
+              ________      ________
+ VDVIS1Z        1.000
+ VDVIS2         0.482
+
+
+           Residuals for Covariances/Correlations/Residual Correlations
+              VDVIS1Z       VDVIS2
+              ________      ________
+ VDVIS1Z        0.000
+ VDVIS2         0.000
+
+
+           Residuals for Correlations/Residual Correlations
+              VDVIS1Z       VDVIS2
+              ________      ________
+ VDVIS1Z        0.000
+ VDVIS2         0.000
+
+
+     UNIVARIATE PROPORTIONS FOR CATEGORICAL VARIABLES
+
+     Variable          Observed      Estimated      Residual (Obs.-Est.)    Stand. Residual
+     VDVIS2
+       Category  1       0.467          0.467                  0.000                0.000
+       Category  2       0.533          0.533                  0.000                0.000
+
+
+MODEL MODIFICATION INDICES
+
+NOTE:  Modification indices for direct effects of observed dependent variables
+regressed on covariates and residual covariances among observed dependent
+variables may not be included.  To include these, request MODINDICES (ALL).
+
+Minimum M.I. value for printing the modification index     0.000
+
+                                   M.I.     E.P.C.  Std E.P.C.  StdYX E.P.C.
+
+No modification indices above the minimum value.
+
+
+
+     Beginning Time:  09:10:54
+        Ending Time:  09:10:54
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2018 Muthen & Muthen

@@ -1,0 +1,521 @@
+Mplus VERSION 8.2 (Mac)
+MUTHEN & MUTHEN
+05/26/2020   9:10 AM
+
+INPUT INSTRUCTIONS
+
+  TITLE:
+    Variable List -
+
+    vdlfl1z : vdlfl1_z1 = (vdlfl1 -        .004106468202)/         43.00821294
+    vdlfl2 : Naming 2 items HRS TICS scissors, cactus
+      0: 0-1
+      1: 2
+    vdlfl3 : Naming 2 items MMSE
+      0: 0-1
+      1: 2
+    vdlfl4 : MMSE write a sentence
+    vdlfl5 : MMSE read and follow command
+    vdlfl6 : 1066 object naming
+      0: 0-2
+      1: 3
+      2: 4
+
+  DATA:
+    FILE = __000001.dat ;
+  VARIABLE:
+    NAMES =
+      vdlfl1z vdlfl2 vdlfl3 vdlfl4 vdlfl5 vdlfl6 ;
+    MISSING ARE ALL (-9999) ;
+    CATEGORICAL =
+      vdlfl2
+      vdlfl3
+      vdlfl4
+      vdlfl5
+      vdlfl6
+      ;
+  ANALYSIS:
+  OUTPUT:
+     MODINDICES(-0);
+     RESIDUAL ;
+  stdyx  ;
+
+  MODEL:
+  lfl by vdlfl1z vdlfl2 vdlfl3 vdlfl4 vdlfl5 vdlfl6  ;
+
+
+
+
+INPUT READING TERMINATED NORMALLY
+
+
+
+
+Variable List -
+
+vdlfl1z : vdlfl1_z1 = (vdlfl1 -        .004106468202)/         43.00821294
+vdlfl2 : Naming 2 items HRS TICS scissors, cactus
+0: 0-1
+1: 2
+vdlfl3 : Naming 2 items MMSE
+0: 0-1
+1: 2
+vdlfl4 : MMSE write a sentence
+vdlfl5 : MMSE read and follow command
+vdlfl6 : 1066 object naming
+0: 0-2
+1: 3
+2: 4
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                        3347
+
+Number of dependent variables                                    6
+Number of independent variables                                  0
+Number of continuous latent variables                            1
+
+Observed dependent variables
+
+  Continuous
+   VDLFL1Z
+
+  Binary and ordered categorical (ordinal)
+   VDLFL2      VDLFL3      VDLFL4      VDLFL5      VDLFL6
+
+Continuous latent variables
+   LFL
+
+
+Estimator                                                    WLSMV
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Parameterization                                             DELTA
+Link                                                        PROBIT
+
+Input data file(s)
+  __000001.dat
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns            15
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              VDLFL1Z       VDLFL2        VDLFL3        VDLFL4        VDLFL5
+              ________      ________      ________      ________      ________
+ VDLFL1Z        0.999
+ VDLFL2         0.996         0.996
+ VDLFL3         0.997         0.995         0.997
+ VDLFL4         0.967         0.964         0.965         0.967
+ VDLFL5         0.993         0.990         0.992         0.964         0.993
+ VDLFL6         0.998         0.995         0.996         0.965         0.991
+
+
+           Covariance Coverage
+              VDLFL6
+              ________
+ VDLFL6         0.998
+
+
+UNIVARIATE PROPORTIONS AND COUNTS FOR CATEGORICAL VARIABLES
+
+    VDLFL2
+      Category 1    0.086          287.000
+      Category 2    0.914         3047.000
+    VDLFL3
+      Category 1    0.012           40.000
+      Category 2    0.988         3298.000
+    VDLFL4
+      Category 1    0.066          213.000
+      Category 2    0.934         3023.000
+    VDLFL5
+      Category 1    0.039          129.000
+      Category 2    0.961         3195.000
+    VDLFL6
+      Category 1    0.036          121.000
+      Category 2    0.209          698.000
+      Category 3    0.755         2522.000
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     VDLFL1Z               0.371       0.255       0.000    0.84%       0.233      0.326      0.372
+            3345.000       0.023       0.116       1.000    0.03%       0.395      0.488
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       14
+
+Chi-Square Test of Model Fit
+
+          Value                             43.863*
+          Degrees of Freedom                     9
+          P-Value                           0.0000
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.034
+          90 Percent C.I.                    0.024  0.044
+          Probability RMSEA <= .05           0.995
+
+CFI/TLI
+
+          CFI                                0.978
+          TLI                                0.964
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                           1616.973
+          Degrees of Freedom                    15
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.051
+
+Optimum Function Value for Weighted Least-Squares Estimator
+
+          Value                     0.43931120D-02
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ LFL      BY
+    VDLFL1Z            1.000      0.000    999.000    999.000
+    VDLFL2             7.396      0.431     17.165      0.000
+    VDLFL3             7.500      0.623     12.030      0.000
+    VDLFL4             5.699      0.410     13.891      0.000
+    VDLFL5             5.182      0.483     10.722      0.000
+    VDLFL6             5.600      0.312     17.968      0.000
+
+ Intercepts
+    VDLFL1Z            0.371      0.003    138.443      0.000
+
+ Thresholds
+    VDLFL2$1          -1.365      0.031    -44.151      0.000
+    VDLFL3$1          -2.258      0.060    -37.397      0.000
+    VDLFL4$1          -1.508      0.034    -44.283      0.000
+    VDLFL5$1          -1.765      0.040    -44.291      0.000
+    VDLFL6$1          -1.796      0.041    -44.164      0.000
+    VDLFL6$2          -0.690      0.024    -29.150      0.000
+
+ Variances
+    LFL                0.011      0.001     15.005      0.000
+
+ Residual Variances
+    VDLFL1Z            0.013      0.001     19.526      0.000
+
+
+STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ LFL      BY
+    VDLFL1Z            0.674      0.020     34.091      0.000
+    VDLFL2             0.762      0.032     23.745      0.000
+    VDLFL3             0.772      0.055     13.963      0.000
+    VDLFL4             0.587      0.036     16.314      0.000
+    VDLFL5             0.534      0.045     11.910      0.000
+    VDLFL6             0.577      0.023     24.809      0.000
+
+ Intercepts
+    VDLFL1Z            2.431      0.037     66.147      0.000
+
+ Thresholds
+    VDLFL2$1          -1.365      0.031    -44.151      0.000
+    VDLFL3$1          -2.258      0.060    -37.397      0.000
+    VDLFL4$1          -1.508      0.034    -44.283      0.000
+    VDLFL5$1          -1.765      0.040    -44.291      0.000
+    VDLFL6$1          -1.796      0.041    -44.164      0.000
+    VDLFL6$2          -0.690      0.024    -29.150      0.000
+
+ Variances
+    LFL                1.000      0.000    999.000    999.000
+
+ Residual Variances
+    VDLFL1Z            0.546      0.027     20.470      0.000
+
+
+R-SQUARE
+
+    Observed                                        Two-Tailed   Residual
+    Variable        Estimate       S.E.  Est./S.E.    P-Value    Variance
+
+    VDLFL1Z            0.454      0.027     17.045      0.000
+    VDLFL2             0.580      0.049     11.873      0.000      0.420
+    VDLFL3             0.596      0.085      6.982      0.000      0.404
+    VDLFL4             0.344      0.042      8.157      0.000      0.656
+    VDLFL5             0.285      0.048      5.955      0.000      0.715
+    VDLFL6             0.332      0.027     12.404      0.000      0.668
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.102E-05
+       (ratio of smallest to largest eigenvalue)
+
+
+RESIDUAL OUTPUT
+
+
+     ESTIMATED MODEL AND RESIDUALS (OBSERVED - ESTIMATED)
+
+
+           Model Estimated Means/Intercepts/Thresholds
+              VDLFL1Z       VDLFL2$1      VDLFL3$1      VDLFL4$1      VDLFL5$1
+              ________      ________      ________      ________      ________
+                0.371        -1.365        -2.258        -1.508        -1.765
+
+
+           Model Estimated Means/Intercepts/Thresholds
+              VDLFL6$1      VDLFL6$2
+              ________      ________
+               -1.796        -0.690
+
+
+           Residuals for Means/Intercepts/Thresholds
+              VDLFL1Z       VDLFL2$1      VDLFL3$1      VDLFL4$1      VDLFL5$1
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.000         0.000
+
+
+           Residuals for Means/Intercepts/Thresholds
+              VDLFL6$1      VDLFL6$2
+              ________      ________
+                0.000         0.000
+
+
+           Model Estimated Covariances/Correlations/Residual Correlations
+              VDLFL1Z       VDLFL2        VDLFL3        VDLFL4        VDLFL5
+              ________      ________      ________      ________      ________
+ VDLFL1Z        0.023
+ VDLFL2         0.078
+ VDLFL3         0.080         0.588
+ VDLFL4         0.060         0.447         0.453
+ VDLFL5         0.055         0.406         0.412         0.313
+ VDLFL6         0.059         0.439         0.445         0.338         0.308
+
+
+           Model Estimated Covariances/Correlations/Residual Correlations
+              VDLFL6
+              ________
+
+
+           Model Estimated Correlations/Residual Correlations
+              VDLFL1Z       VDLFL2        VDLFL3        VDLFL4        VDLFL5
+              ________      ________      ________      ________      ________
+ VDLFL1Z        1.000
+ VDLFL2         0.513
+ VDLFL3         0.521         0.588
+ VDLFL4         0.396         0.447         0.453
+ VDLFL5         0.360         0.406         0.412         0.313
+ VDLFL6         0.389         0.439         0.445         0.338         0.308
+
+
+           Model Estimated Correlations/Residual Correlations
+              VDLFL6
+              ________
+
+
+           Residuals for Covariances/Correlations/Residual Correlations
+              VDLFL1Z       VDLFL2        VDLFL3        VDLFL4        VDLFL5
+              ________      ________      ________      ________      ________
+ VDLFL1Z        0.000
+ VDLFL2         0.009
+ VDLFL3        -0.003        -0.136
+ VDLFL4        -0.002        -0.062         0.063
+ VDLFL5        -0.013         0.003         0.046         0.134
+ VDLFL6        -0.001        -0.047         0.095        -0.001         0.059
+
+
+           Residuals for Covariances/Correlations/Residual Correlations
+              VDLFL6
+              ________
+
+
+           Residuals for Correlations/Residual Correlations
+              VDLFL1Z       VDLFL2        VDLFL3        VDLFL4        VDLFL5
+              ________      ________      ________      ________      ________
+ VDLFL1Z        0.000
+ VDLFL2         0.058
+ VDLFL3        -0.020        -0.136
+ VDLFL4        -0.012        -0.062         0.063
+ VDLFL5        -0.085         0.003         0.046         0.134
+ VDLFL6        -0.005        -0.047         0.095        -0.001         0.059
+
+
+           Residuals for Correlations/Residual Correlations
+              VDLFL6
+              ________
+
+
+     UNIVARIATE PROPORTIONS FOR CATEGORICAL VARIABLES
+
+     Variable          Observed      Estimated      Residual (Obs.-Est.)    Stand. Residual
+     VDLFL2
+       Category  1       0.086          0.086                  0.000                0.000
+       Category  2       0.914          0.914                  0.000                0.000
+     VDLFL3
+       Category  1       0.012          0.012                  0.000                0.000
+       Category  2       0.988          0.988                  0.000                0.000
+     VDLFL4
+       Category  1       0.066          0.066                  0.000                0.000
+       Category  2       0.934          0.934                  0.000                0.000
+     VDLFL5
+       Category  1       0.039          0.039                  0.000                0.000
+       Category  2       0.961          0.961                  0.000                0.000
+     VDLFL6
+       Category  1       0.036          0.036                  0.000                0.000
+       Category  2       0.209          0.209                  0.000                0.000
+       Category  3       0.755          0.755                  0.000                0.000
+
+
+     BIVARIATE PROPORTIONS FOR CATEGORICAL VARIABLES
+
+     Variable       Variable          Observed     Estimated    Residual (Obs.-Est.)  Stand. Residual
+     VDLFL2         VDLFL3
+       Category 1     Category 1        0.005       0.007            -0.002           -1.686
+       Category 1     Category 2        0.081       0.079             0.002            0.412
+       Category 2     Category 1        0.006       0.005             0.001            1.018
+       Category 2     Category 2        0.908       0.909            -0.001           -0.151
+     VDLFL2         VDLFL4
+       Category 1     Category 1        0.015       0.019            -0.004           -1.815
+       Category 1     Category 2        0.062       0.067            -0.005           -1.177
+       Category 2     Category 1        0.050       0.047             0.003            0.810
+       Category 2     Category 2        0.874       0.867             0.007            1.099
+     VDLFL2         VDLFL5
+       Category 1     Category 1        0.011       0.012             0.000           -0.249
+       Category 1     Category 2        0.073       0.074            -0.001           -0.236
+       Category 2     Category 1        0.026       0.027            -0.001           -0.320
+       Category 2     Category 2        0.889       0.887             0.002            0.444
+     VDLFL2         VDLFL6
+       Category 1     Category 1        0.011       0.012            -0.001           -0.752
+       Category 1     Category 2        0.032       0.035            -0.003           -0.966
+       Category 1     Category 3        0.043       0.039             0.004            1.202
+       Category 2     Category 1        0.023       0.024            -0.002           -0.659
+       Category 2     Category 2        0.177       0.174             0.004            0.539
+       Category 2     Category 3        0.715       0.716            -0.001           -0.168
+     VDLFL3         VDLFL4
+       Category 1     Category 1        0.004       0.004             0.000            0.039
+       Category 1     Category 2        0.006       0.008            -0.002           -1.180
+       Category 2     Category 1        0.061       0.062            -0.001           -0.206
+       Category 2     Category 2        0.929       0.926             0.003            0.575
+     VDLFL3         VDLFL5
+       Category 1     Category 1        0.003       0.003             0.000            0.005
+       Category 1     Category 2        0.008       0.009            -0.001           -0.867
+       Category 2     Category 1        0.035       0.036            -0.001           -0.355
+       Category 2     Category 2        0.955       0.952             0.003            0.697
+     VDLFL3         VDLFL6
+       Category 1     Category 1        0.004       0.003             0.001            0.770
+       Category 1     Category 2        0.005       0.005             0.000           -0.290
+       Category 1     Category 3        0.002       0.004            -0.001           -1.176
+       Category 2     Category 1        0.030       0.033            -0.003           -0.971
+       Category 2     Category 2        0.204       0.203             0.001            0.134
+       Category 2     Category 3        0.754       0.751             0.003            0.396
+     VDLFL4         VDLFL5
+       Category 1     Category 1        0.009       0.007             0.001            0.987
+       Category 1     Category 2        0.056       0.058            -0.002           -0.549
+       Category 2     Category 1        0.023       0.031            -0.008           -2.638
+       Category 2     Category 2        0.912       0.903             0.009            1.699
+     VDLFL4         VDLFL6
+       Category 1     Category 1        0.007       0.008            -0.001           -0.518
+       Category 1     Category 2        0.024       0.024            -0.001           -0.216
+       Category 1     Category 3        0.035       0.034             0.001            0.368
+       Category 2     Category 1        0.024       0.029            -0.004           -1.525
+       Category 2     Category 2        0.181       0.185            -0.004           -0.550
+       Category 2     Category 3        0.729       0.721             0.008            1.069
+     VDLFL5         VDLFL6
+       Category 1     Category 1        0.007       0.005             0.002            1.961
+       Category 1     Category 2        0.013       0.014            -0.002           -0.841
+       Category 1     Category 3        0.019       0.020            -0.001           -0.455
+       Category 2     Category 1        0.028       0.032            -0.004           -1.273
+       Category 2     Category 2        0.196       0.195             0.001            0.201
+       Category 2     Category 3        0.738       0.735             0.003            0.394
+
+
+MODEL MODIFICATION INDICES
+
+NOTE:  Modification indices for direct effects of observed dependent variables
+regressed on covariates and residual covariances among observed dependent
+variables may not be included.  To include these, request MODINDICES (ALL).
+
+Minimum M.I. value for printing the modification index     0.000
+
+                                   M.I.     E.P.C.  Std E.P.C.  StdYX E.P.C.
+
+WITH Statements
+
+VDLFL2   WITH VDLFL1Z             28.341     0.035      0.035        0.473
+VDLFL3   WITH VDLFL1Z              0.900    -0.007     -0.007       -0.104
+VDLFL3   WITH VDLFL2               6.796    -0.189     -0.189       -0.459
+VDLFL4   WITH VDLFL1Z              0.643    -0.005     -0.005       -0.049
+VDLFL4   WITH VDLFL2               3.620    -0.093     -0.093       -0.178
+VDLFL4   WITH VDLFL3               1.315     0.079      0.079        0.154
+VDLFL5   WITH VDLFL1Z             17.918    -0.026     -0.026       -0.270
+VDLFL5   WITH VDLFL2               0.006     0.004      0.004        0.007
+VDLFL5   WITH VDLFL3               0.481     0.054      0.054        0.100
+VDLFL5   WITH VDLFL4               9.795     0.164      0.164        0.239
+VDLFL6   WITH VDLFL1Z              0.419    -0.003     -0.003       -0.034
+VDLFL6   WITH VDLFL2               5.609    -0.093     -0.093       -0.176
+VDLFL6   WITH VDLFL3               5.789     0.132      0.132        0.254
+VDLFL6   WITH VDLFL4               0.002    -0.002     -0.002       -0.002
+VDLFL6   WITH VDLFL5               4.021     0.082      0.082        0.118
+
+
+     Beginning Time:  09:10:53
+        Ending Time:  09:10:53
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2018 Muthen & Muthen

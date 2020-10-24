@@ -1,0 +1,401 @@
+Mplus VERSION 8.2 (Mac)
+MUTHEN & MUTHEN
+05/26/2020   9:10 AM
+
+INPUT INSTRUCTIONS
+
+  TITLE:
+    Variable List -
+
+    vdasp1z : vdasp1_z1 = (vdasp1 -        .007827027941)/         71.01565406
+    vdasp2z : vdasp2_z1 = (vdasp2 -      .00005338379933)/         .8074956097
+    vdasp3 : MMSE spell world backwards
+    vdasp4z : vdasp4_z1 = (vdasp4 -        .006999674533)/         80.01399935
+    vdasp5z : vdasp5_z1 = (vdasp5 -         .00329259995)/          37.0065852
+
+  DATA:
+    FILE = __000001.dat ;
+  VARIABLE:
+    NAMES =
+      vdasp1z vdasp2z vdasp3 vdasp4z vdasp5z ;
+    MISSING ARE ALL (-9999) ;
+    CATEGORICAL =
+      vdasp3
+      ;
+  ANALYSIS:
+  OUTPUT:
+     MODINDICES(-0);
+     RESIDUAL ;
+  stdyx  ;
+
+  MODEL:
+  asp by vdasp1z vdasp2z vdasp3 vdasp4z vdasp5z ;
+
+
+
+
+*** WARNING
+  Data set contains cases with missing on all variables.
+  These cases were not included in the analysis.
+  Number of cases with missing on all variables:  13
+   1 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+
+Variable List -
+
+vdasp1z : vdasp1_z1 = (vdasp1 -        .007827027941)/         71.01565406
+vdasp2z : vdasp2_z1 = (vdasp2 -      .00005338379933)/         .8074956097
+vdasp3 : MMSE spell world backwards
+vdasp4z : vdasp4_z1 = (vdasp4 -        .006999674533)/         80.01399935
+vdasp5z : vdasp5_z1 = (vdasp5 -         .00329259995)/          37.0065852
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                        3334
+
+Number of dependent variables                                    5
+Number of independent variables                                  0
+Number of continuous latent variables                            1
+
+Observed dependent variables
+
+  Continuous
+   VDASP1Z     VDASP2Z     VDASP4Z     VDASP5Z
+
+  Binary and ordered categorical (ordinal)
+   VDASP3
+
+Continuous latent variables
+   ASP
+
+
+Estimator                                                    WLSMV
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Parameterization                                             DELTA
+Link                                                        PROBIT
+
+Input data file(s)
+  __000001.dat
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns            27
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              VDASP1Z       VDASP2Z       VDASP3        VDASP4Z       VDASP5Z
+              ________      ________      ________      ________      ________
+ VDASP1Z        0.950
+ VDASP2Z        0.940         0.963
+ VDASP3         0.915         0.922         0.953
+ VDASP4Z        0.942         0.953         0.943         0.984
+ VDASP5Z        0.938         0.942         0.920         0.949         0.959
+
+
+UNIVARIATE PROPORTIONS AND COUNTS FOR CATEGORICAL VARIABLES
+
+    VDASP3
+      Category 1    0.016           52.000
+      Category 2    0.027           87.000
+      Category 3    0.050          159.000
+      Category 4    0.106          338.000
+      Category 5    0.047          150.000
+      Category 6    0.753         2390.000
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     VDASP1Z               0.458      -0.216       0.000    0.44%       0.296      0.423      0.465
+            3168.000       0.031      -0.445       1.000    0.03%       0.507      0.620
+     VDASP2Z               0.397      -0.706       0.000    0.16%       0.319      0.389      0.412
+            3210.000       0.011       1.040       1.000    0.03%       0.432      0.479
+     VDASP4Z               0.369      -0.150       0.000    1.28%       0.263      0.350      0.375
+            3280.000       0.020       0.520       1.000    0.03%       0.400      0.475
+     VDASP5Z               0.400      -0.137       0.000    0.84%       0.297      0.378      0.405
+            3197.000       0.020       0.378       1.000    0.03%       0.432      0.514
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       18
+
+Chi-Square Test of Model Fit
+
+          Value                            126.266*
+          Degrees of Freedom                     5
+          P-Value                           0.0000
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.085
+          90 Percent C.I.                    0.073  0.098
+          Probability RMSEA <= .05           0.000
+
+CFI/TLI
+
+          CFI                                0.974
+          TLI                                0.949
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                           4758.155
+          Degrees of Freedom                    10
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.020
+
+Optimum Function Value for Weighted Least-Squares Estimator
+
+          Value                     0.45235297D-02
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ ASP      BY
+    VDASP1Z            1.000      0.000    999.000    999.000
+    VDASP2Z            0.539      0.011     47.860      0.000
+    VDASP3             3.649      0.115     31.615      0.000
+    VDASP4Z            0.596      0.014     42.607      0.000
+    VDASP5Z            0.669      0.015     45.773      0.000
+
+ Intercepts
+    VDASP1Z            0.458      0.003    143.890      0.000
+    VDASP2Z            0.397      0.002    194.306      0.000
+    VDASP4Z            0.369      0.002    150.178      0.000
+    VDASP5Z            0.400      0.003    158.102      0.000
+
+ Thresholds
+    VDASP3$1          -2.135      0.055    -38.711      0.000
+    VDASP3$2          -1.709      0.039    -43.625      0.000
+    VDASP3$3          -1.318      0.031    -42.647      0.000
+    VDASP3$4          -0.841      0.025    -33.171      0.000
+    VDASP3$5          -0.682      0.024    -28.168      0.000
+
+ Variances
+    ASP                0.025      0.001     26.798      0.000
+
+ Residual Variances
+    VDASP1Z            0.006      0.000     21.311      0.000
+    VDASP2Z            0.004      0.000     32.397      0.000
+    VDASP4Z            0.011      0.000     39.753      0.000
+    VDASP5Z            0.009      0.000     37.534      0.000
+
+
+STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ ASP      BY
+    VDASP1Z            0.905      0.006    160.698      0.000
+    VDASP2Z            0.814      0.007    116.085      0.000
+    VDASP3             0.582      0.017     34.622      0.000
+    VDASP4Z            0.679      0.010     71.305      0.000
+    VDASP5Z            0.750      0.008     92.000      0.000
+
+ Intercepts
+    VDASP1Z            2.596      0.039     67.006      0.000
+    VDASP2Z            3.751      0.038     98.575      0.000
+    VDASP4Z            2.634      0.033     80.973      0.000
+    VDASP5Z            2.807      0.035     79.138      0.000
+
+ Thresholds
+    VDASP3$1          -2.135      0.055    -38.711      0.000
+    VDASP3$2          -1.709      0.039    -43.625      0.000
+    VDASP3$3          -1.318      0.031    -42.647      0.000
+    VDASP3$4          -0.841      0.025    -33.171      0.000
+    VDASP3$5          -0.682      0.024    -28.168      0.000
+
+ Variances
+    ASP                1.000      0.000    999.000    999.000
+
+ Residual Variances
+    VDASP1Z            0.181      0.010     17.734      0.000
+    VDASP2Z            0.338      0.011     29.572      0.000
+    VDASP4Z            0.538      0.013     41.569      0.000
+    VDASP5Z            0.437      0.012     35.777      0.000
+
+
+R-SQUARE
+
+    Observed                                        Two-Tailed   Residual
+    Variable        Estimate       S.E.  Est./S.E.    P-Value    Variance
+
+    VDASP1Z            0.819      0.010     80.349      0.000
+    VDASP2Z            0.662      0.011     58.043      0.000
+    VDASP3             0.339      0.020     17.311      0.000      0.661
+    VDASP4Z            0.462      0.013     35.652      0.000
+    VDASP5Z            0.563      0.012     46.000      0.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.118E-04
+       (ratio of smallest to largest eigenvalue)
+
+
+RESIDUAL OUTPUT
+
+
+     ESTIMATED MODEL AND RESIDUALS (OBSERVED - ESTIMATED)
+
+
+           Model Estimated Means/Intercepts/Thresholds
+              VDASP1Z       VDASP2Z       VDASP3$1      VDASP3$2      VDASP3$3
+              ________      ________      ________      ________      ________
+                0.458         0.397        -2.135        -1.709        -1.318
+
+
+           Model Estimated Means/Intercepts/Thresholds
+              VDASP3$4      VDASP3$5      VDASP4Z       VDASP5Z
+              ________      ________      ________      ________
+               -0.841        -0.682         0.369         0.400
+
+
+           Residuals for Means/Intercepts/Thresholds
+              VDASP1Z       VDASP2Z       VDASP3$1      VDASP3$2      VDASP3$3
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.000         0.000
+
+
+           Residuals for Means/Intercepts/Thresholds
+              VDASP3$4      VDASP3$5      VDASP4Z       VDASP5Z
+              ________      ________      ________      ________
+                0.000         0.000         0.000         0.000
+
+
+           Model Estimated Covariances/Correlations/Residual Correlations
+              VDASP1Z       VDASP2Z       VDASP3        VDASP4Z       VDASP5Z
+              ________      ________      ________      ________      ________
+ VDASP1Z        0.031
+ VDASP2Z        0.014         0.011
+ VDASP3         0.093         0.050
+ VDASP4Z        0.015         0.008         0.055         0.020
+ VDASP5Z        0.017         0.009         0.062         0.010         0.020
+
+
+           Model Estimated Correlations/Residual Correlations
+              VDASP1Z       VDASP2Z       VDASP3        VDASP4Z       VDASP5Z
+              ________      ________      ________      ________      ________
+ VDASP1Z        1.000
+ VDASP2Z        0.737         1.000
+ VDASP3         0.527         0.474
+ VDASP4Z        0.615         0.553         0.396         1.000
+ VDASP5Z        0.679         0.610         0.437         0.510         1.000
+
+
+           Residuals for Covariances/Correlations/Residual Correlations
+              VDASP1Z       VDASP2Z       VDASP3        VDASP4Z       VDASP5Z
+              ________      ________      ________      ________      ________
+ VDASP1Z        0.000
+ VDASP2Z        0.000         0.000
+ VDASP3        -0.004        -0.005
+ VDASP4Z        0.000         0.000         0.010         0.000
+ VDASP5Z        0.000         0.000        -0.001        -0.001         0.000
+
+
+           Residuals for Correlations/Residual Correlations
+              VDASP1Z       VDASP2Z       VDASP3        VDASP4Z       VDASP5Z
+              ________      ________      ________      ________      ________
+ VDASP1Z        0.000
+ VDASP2Z        0.002         0.000
+ VDASP3        -0.022        -0.043
+ VDASP4Z        0.003        -0.009         0.068         0.000
+ VDASP5Z        0.011         0.032        -0.008        -0.040         0.000
+
+
+     UNIVARIATE PROPORTIONS FOR CATEGORICAL VARIABLES
+
+     Variable          Observed      Estimated      Residual (Obs.-Est.)    Stand. Residual
+     VDASP3
+       Category  1       0.016          0.016                  0.000                0.000
+       Category  2       0.027          0.027                  0.000                0.000
+       Category  3       0.050          0.050                  0.000                0.000
+       Category  4       0.106          0.106                  0.000                0.000
+       Category  5       0.047          0.047                  0.000                0.000
+       Category  6       0.753          0.753                  0.000                0.000
+
+
+MODEL MODIFICATION INDICES
+
+NOTE:  Modification indices for direct effects of observed dependent variables
+regressed on covariates and residual covariances among observed dependent
+variables may not be included.  To include these, request MODINDICES (ALL).
+
+Minimum M.I. value for printing the modification index     0.000
+
+                                   M.I.     E.P.C.  Std E.P.C.  StdYX E.P.C.
+
+WITH Statements
+
+VDASP2Z  WITH VDASP1Z              0.129     0.000      0.000        0.024
+VDASP3   WITH VDASP1Z              8.259    -0.007     -0.007       -0.115
+VDASP3   WITH VDASP2Z             31.782    -0.008     -0.008       -0.153
+VDASP4Z  WITH VDASP1Z              0.225     0.000      0.000        0.022
+VDASP4Z  WITH VDASP2Z              2.728     0.000      0.000       -0.048
+VDASP4Z  WITH VDASP3              97.823     0.015      0.015        0.183
+VDASP5Z  WITH VDASP1Z              2.706     0.001      0.001        0.090
+VDASP5Z  WITH VDASP2Z             34.784     0.001      0.001        0.208
+VDASP5Z  WITH VDASP3               1.065    -0.002     -0.002       -0.023
+VDASP5Z  WITH VDASP4Z             48.969    -0.002     -0.002       -0.171
+
+
+     Beginning Time:  09:10:52
+        Ending Time:  09:10:52
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2018 Muthen & Muthen

@@ -1,0 +1,357 @@
+Mplus VERSION 8.2 (Mac)
+MUTHEN & MUTHEN
+05/26/2020   9:10 AM
+
+INPUT INSTRUCTIONS
+
+  TITLE:
+    Variable List -
+
+    vdmie1z : vdmie1_z1 = (vdmie1 -         .00329300173)/           30.006586
+    vdmie2 : MMSE 3 word recognition (0-3)
+      0: 0-2
+      1: 3
+    vdmie3z : vdmie3_z1 = (vdmie3 -        .003185536324)/         23.00637107
+    vdmie4z : vdmie4_z1 = (vdmie4 -        .001523299361)/          12.0030466
+
+  DATA:
+    FILE = __000001.dat ;
+  VARIABLE:
+    NAMES =
+      vdmie1z vdmie2 vdmie3z vdmie4z ;
+    MISSING ARE ALL (-9999) ;
+    CATEGORICAL =
+      vdmie2
+      ;
+  ANALYSIS:
+  OUTPUT:
+     MODINDICES(-0);
+     RESIDUAL ;
+  stdyx  ;
+
+  MODEL:
+  mie by vdmie1z vdmie2 vdmie3z vdmie4z  ;
+
+
+
+
+*** WARNING
+  Data set contains cases with missing on all variables.
+  These cases were not included in the analysis.
+  Number of cases with missing on all variables:  2
+   1 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+
+Variable List -
+
+vdmie1z : vdmie1_z1 = (vdmie1 -         .00329300173)/           30.006586
+vdmie2 : MMSE 3 word recognition (0-3)
+0: 0-2
+1: 3
+vdmie3z : vdmie3_z1 = (vdmie3 -        .003185536324)/         23.00637107
+vdmie4z : vdmie4_z1 = (vdmie4 -        .001523299361)/          12.0030466
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                        3345
+
+Number of dependent variables                                    4
+Number of independent variables                                  0
+Number of continuous latent variables                            1
+
+Observed dependent variables
+
+  Continuous
+   VDMIE1Z     VDMIE3Z     VDMIE4Z
+
+  Binary and ordered categorical (ordinal)
+   VDMIE2
+
+Continuous latent variables
+   MIE
+
+
+Estimator                                                    WLSMV
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Parameterization                                             DELTA
+Link                                                        PROBIT
+
+Input data file(s)
+  __000001.dat
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns             7
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              VDMIE1Z       VDMIE2        VDMIE3Z       VDMIE4Z
+              ________      ________      ________      ________
+ VDMIE1Z        0.999
+ VDMIE2         0.996         0.997
+ VDMIE3Z        0.988         0.986         0.988
+ VDMIE4Z        0.996         0.993         0.988         0.996
+
+
+UNIVARIATE PROPORTIONS AND COUNTS FOR CATEGORICAL VARIABLES
+
+    VDMIE2
+      Category 1    0.089          298.000
+      Category 2    0.911         3036.000
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     VDMIE1Z               0.580      -0.497       0.000    0.66%       0.433      0.533      0.600
+            3343.000       0.031       0.378       1.000    0.15%       0.633      0.733
+     VDMIE3Z               0.428      -0.083       0.000    4.66%       0.217      0.391      0.435
+            3306.000       0.049      -0.666       1.000    0.12%       0.478      0.609
+     VDMIE4Z               0.592      -0.525       0.000    1.95%       0.417      0.583      0.583
+            3332.000       0.041       0.395       1.000    2.07%       0.667      0.750
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       11
+
+Chi-Square Test of Model Fit
+
+          Value                             35.888*
+          Degrees of Freedom                     2
+          P-Value                           0.0000
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.071
+          90 Percent C.I.                    0.052  0.092
+          Probability RMSEA <= .05           0.036
+
+CFI/TLI
+
+          CFI                                0.981
+          TLI                                0.943
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                           1790.313
+          Degrees of Freedom                     6
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.021
+
+Optimum Function Value for Weighted Least-Squares Estimator
+
+          Value                     0.16078138D-02
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ MIE      BY
+    VDMIE1Z            1.000      0.000    999.000    999.000
+    VDMIE2             3.426      0.217     15.775      0.000
+    VDMIE3Z            1.256      0.041     30.724      0.000
+    VDMIE4Z            0.998      0.032     31.406      0.000
+
+ Intercepts
+    VDMIE1Z            0.580      0.003    180.804      0.000
+    VDMIE3Z            0.428      0.004    110.696      0.000
+    VDMIE4Z            0.592      0.004    158.342      0.000
+
+ Thresholds
+    VDMIE2$1          -1.345      0.031    -43.965      0.000
+
+ Variances
+    MIE                0.018      0.001     22.470      0.000
+
+ Residual Variances
+    VDMIE1Z            0.013      0.001     23.572      0.000
+    VDMIE3Z            0.021      0.001     24.650      0.000
+    VDMIE4Z            0.023      0.001     32.996      0.000
+
+
+STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ MIE      BY
+    VDMIE1Z            0.762      0.012     64.285      0.000
+    VDMIE2             0.459      0.028     16.194      0.000
+    VDMIE3Z            0.759      0.012     61.752      0.000
+    VDMIE4Z            0.658      0.013     52.197      0.000
+
+ Intercepts
+    VDMIE1Z            3.303      0.037     88.132      0.000
+    VDMIE3Z            1.930      0.033     58.725      0.000
+    VDMIE4Z            2.916      0.033     87.545      0.000
+
+ Thresholds
+    VDMIE2$1          -1.345      0.031    -43.965      0.000
+
+ Variances
+    MIE                1.000      0.000    999.000    999.000
+
+ Residual Variances
+    VDMIE1Z            0.419      0.018     23.159      0.000
+    VDMIE3Z            0.424      0.019     22.720      0.000
+    VDMIE4Z            0.567      0.017     34.217      0.000
+
+
+R-SQUARE
+
+    Observed                                        Two-Tailed   Residual
+    Variable        Estimate       S.E.  Est./S.E.    P-Value    Variance
+
+    VDMIE1Z            0.581      0.018     32.143      0.000
+    VDMIE2             0.210      0.026      8.097      0.000      0.790
+    VDMIE3Z            0.576      0.019     30.876      0.000
+    VDMIE4Z            0.433      0.017     26.098      0.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.548E-05
+       (ratio of smallest to largest eigenvalue)
+
+
+RESIDUAL OUTPUT
+
+
+     ESTIMATED MODEL AND RESIDUALS (OBSERVED - ESTIMATED)
+
+
+           Model Estimated Means/Intercepts/Thresholds
+              VDMIE1Z       VDMIE2$1      VDMIE3Z       VDMIE4Z
+              ________      ________      ________      ________
+                0.580        -1.345         0.428         0.592
+
+
+           Residuals for Means/Intercepts/Thresholds
+              VDMIE1Z       VDMIE2$1      VDMIE3Z       VDMIE4Z
+              ________      ________      ________      ________
+                0.000         0.000         0.000         0.000
+
+
+           Model Estimated Covariances/Correlations/Residual Correlations
+              VDMIE1Z       VDMIE2        VDMIE3Z       VDMIE4Z
+              ________      ________      ________      ________
+ VDMIE1Z        0.031
+ VDMIE2         0.061
+ VDMIE3Z        0.023         0.077         0.049
+ VDMIE4Z        0.018         0.061         0.022         0.041
+
+
+           Model Estimated Correlations/Residual Correlations
+              VDMIE1Z       VDMIE2        VDMIE3Z       VDMIE4Z
+              ________      ________      ________      ________
+ VDMIE1Z        1.000
+ VDMIE2         0.350
+ VDMIE3Z        0.579         0.348         1.000
+ VDMIE4Z        0.501         0.302         0.499         1.000
+
+
+           Residuals for Covariances/Correlations/Residual Correlations
+              VDMIE1Z       VDMIE2        VDMIE3Z       VDMIE4Z
+              ________      ________      ________      ________
+ VDMIE1Z        0.000
+ VDMIE2         0.010
+ VDMIE3Z        0.000        -0.008         0.000
+ VDMIE4Z        0.000        -0.006         0.001         0.000
+
+
+           Residuals for Correlations/Residual Correlations
+              VDMIE1Z       VDMIE2        VDMIE3Z       VDMIE4Z
+              ________      ________      ________      ________
+ VDMIE1Z        0.000
+ VDMIE2         0.056
+ VDMIE3Z       -0.012        -0.036         0.000
+ VDMIE4Z       -0.011        -0.029         0.028         0.000
+
+
+     UNIVARIATE PROPORTIONS FOR CATEGORICAL VARIABLES
+
+     Variable          Observed      Estimated      Residual (Obs.-Est.)    Stand. Residual
+     VDMIE2
+       Category  1       0.089          0.089                  0.000                0.000
+       Category  2       0.911          0.911                  0.000                0.000
+
+
+MODEL MODIFICATION INDICES
+
+NOTE:  Modification indices for direct effects of observed dependent variables
+regressed on covariates and residual covariances among observed dependent
+variables may not be included.  To include these, request MODINDICES (ALL).
+
+Minimum M.I. value for printing the modification index     0.000
+
+                                   M.I.     E.P.C.  Std E.P.C.  StdYX E.P.C.
+
+WITH Statements
+
+VDMIE2   WITH VDMIE1Z             35.854     0.021      0.021        0.206
+VDMIE3Z  WITH VDMIE1Z              8.690    -0.004     -0.004       -0.236
+VDMIE3Z  WITH VDMIE2              10.218    -0.014     -0.014       -0.111
+VDMIE4Z  WITH VDMIE1Z             10.217    -0.003     -0.003       -0.190
+VDMIE4Z  WITH VDMIE2               8.687    -0.011     -0.011       -0.077
+VDMIE4Z  WITH VDMIE3Z             35.855     0.008      0.008        0.345
+
+
+     Beginning Time:  09:10:59
+        Ending Time:  09:10:59
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2018 Muthen & Muthen

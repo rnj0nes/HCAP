@@ -1,0 +1,377 @@
+Mplus VERSION 8.2 (Mac)
+MUTHEN & MUTHEN
+05/26/2020   9:11 AM
+
+INPUT INSTRUCTIONS
+
+  TITLE:
+    Variable List -
+
+    vdmde1z : vdmde1_z1 = (vdmde1 -        .001653405662)/         10.00330681
+    vdmde2z : vdmde2_z1 = (vdmde2 -        .003368133996)/         25.00673627
+    vdmde3 : MMSE 3 word delayed recall (0-3)
+      0: 0-1
+      1: 2
+    vdmde4z : vdmde4_z1 = (vdmde4 -         .00202711025)/         11.00405422
+    vdmde5z : vdmde5_z1 = (vdmde5 -        .002063232012)/         12.00412646
+
+  DATA:
+    FILE = __000001.dat ;
+  VARIABLE:
+    NAMES =
+      vdmde1z vdmde2z vdmde3 vdmde4z vdmde5z ;
+    MISSING ARE ALL (-9999) ;
+    CATEGORICAL =
+      vdmde3
+      ;
+  ANALYSIS:
+  OUTPUT:
+     MODINDICES(-0);
+     RESIDUAL ;
+  stdyx  ;
+
+  MODEL:
+  mde by vdmde1z vdmde2z vdmde3 vdmde4z vdmde5z  ;
+
+
+
+
+*** WARNING
+  Data set contains cases with missing on all variables.
+  These cases were not included in the analysis.
+  Number of cases with missing on all variables:  3
+   1 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+
+Variable List -
+
+vdmde1z : vdmde1_z1 = (vdmde1 -        .001653405662)/         10.00330681
+vdmde2z : vdmde2_z1 = (vdmde2 -        .003368133996)/         25.00673627
+vdmde3 : MMSE 3 word delayed recall (0-3)
+0: 0-1
+1: 2
+vdmde4z : vdmde4_z1 = (vdmde4 -         .00202711025)/         11.00405422
+vdmde5z : vdmde5_z1 = (vdmde5 -        .002063232012)/         12.00412646
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                        3344
+
+Number of dependent variables                                    5
+Number of independent variables                                  0
+Number of continuous latent variables                            1
+
+Observed dependent variables
+
+  Continuous
+   VDMDE1Z     VDMDE2Z     VDMDE4Z     VDMDE5Z
+
+  Binary and ordered categorical (ordinal)
+   VDMDE3
+
+Continuous latent variables
+   MDE
+
+
+Estimator                                                    WLSMV
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Parameterization                                             DELTA
+Link                                                        PROBIT
+
+Input data file(s)
+  __000001.dat
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns            16
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              VDMDE1Z       VDMDE2Z       VDMDE3        VDMDE4Z       VDMDE5Z
+              ________      ________      ________      ________      ________
+ VDMDE1Z        0.994
+ VDMDE2Z        0.909         0.911
+ VDMDE3         0.978         0.900         0.983
+ VDMDE4Z        0.983         0.906         0.972         0.988
+ VDMDE5Z        0.972         0.911         0.962         0.969         0.975
+
+
+UNIVARIATE PROPORTIONS AND COUNTS FOR CATEGORICAL VARIABLES
+
+    VDMDE3
+      Category 1    0.092          304.000
+      Category 2    0.908         2983.000
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     VDMDE1Z               0.512      -0.283       0.000    8.09%       0.300      0.500      0.500
+            3324.000       0.070      -0.646       1.000    3.22%       0.600      0.700
+     VDMDE2Z               0.300       0.201       0.000   16.97%       0.080      0.240      0.280
+            3046.000       0.046      -0.892       1.000    0.03%       0.360      0.520
+     VDMDE4Z               0.528      -0.174       0.000    9.87%       0.273      0.455      0.545
+            3303.000       0.087      -0.840       1.000    9.81%       0.636      0.818
+     VDMDE5Z               0.424      -0.257       0.000   19.25%       0.083      0.417      0.500
+            3262.000       0.076      -1.059       1.000    0.58%       0.500      0.667
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       14
+
+Chi-Square Test of Model Fit
+
+          Value                             43.538*
+          Degrees of Freedom                     5
+          P-Value                           0.0000
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.048
+          90 Percent C.I.                    0.036  0.062
+          Probability RMSEA <= .05           0.569
+
+CFI/TLI
+
+          CFI                                0.985
+          TLI                                0.971
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                           2628.363
+          Degrees of Freedom                    10
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.018
+
+Optimum Function Value for Weighted Least-Squares Estimator
+
+          Value                     0.15314144D-02
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ MDE      BY
+    VDMDE1Z            1.000      0.000    999.000    999.000
+    VDMDE2Z            0.773      0.025     30.413      0.000
+    VDMDE3             3.720      0.131     28.483      0.000
+    VDMDE4Z            0.901      0.030     30.078      0.000
+    VDMDE5Z            0.835      0.032     26.406      0.000
+
+ Intercepts
+    VDMDE1Z            0.512      0.005    108.381      0.000
+    VDMDE2Z            0.300      0.004     75.359      0.000
+    VDMDE4Z            0.528      0.005    101.662      0.000
+    VDMDE5Z            0.424      0.005     84.963      0.000
+
+ Thresholds
+    VDMDE3$1          -1.326      0.030    -43.469      0.000
+
+ Variances
+    MDE                0.045      0.002     21.057      0.000
+
+ Residual Variances
+    VDMDE1Z            0.025      0.001     25.009      0.000
+    VDMDE2Z            0.020      0.001     27.774      0.000
+    VDMDE4Z            0.050      0.002     31.918      0.000
+    VDMDE5Z            0.044      0.001     30.284      0.000
+
+
+STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ MDE      BY
+    VDMDE1Z            0.802      0.010     81.760      0.000
+    VDMDE2Z            0.760      0.012     65.842      0.000
+    VDMDE3             0.788      0.021     36.714      0.000
+    VDMDE4Z            0.648      0.013     50.788      0.000
+    VDMDE5Z            0.644      0.014     47.613      0.000
+
+ Intercepts
+    VDMDE1Z            1.938      0.031     62.942      0.000
+    VDMDE2Z            1.391      0.033     41.791      0.000
+    VDMDE4Z            1.792      0.032     56.543      0.000
+    VDMDE5Z            1.543      0.030     51.828      0.000
+
+ Thresholds
+    VDMDE3$1          -1.326      0.030    -43.469      0.000
+
+ Variances
+    MDE                1.000      0.000    999.000    999.000
+
+ Residual Variances
+    VDMDE1Z            0.357      0.016     22.735      0.000
+    VDMDE2Z            0.422      0.018     24.075      0.000
+    VDMDE4Z            0.580      0.017     35.090      0.000
+    VDMDE5Z            0.586      0.017     33.637      0.000
+
+
+R-SQUARE
+
+    Observed                                        Two-Tailed   Residual
+    Variable        Estimate       S.E.  Est./S.E.    P-Value    Variance
+
+    VDMDE1Z            0.643      0.016     40.880      0.000
+    VDMDE2Z            0.578      0.018     32.921      0.000
+    VDMDE3             0.622      0.034     18.357      0.000      0.378
+    VDMDE4Z            0.420      0.017     25.394      0.000
+    VDMDE5Z            0.414      0.017     23.806      0.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.511E-04
+       (ratio of smallest to largest eigenvalue)
+
+
+RESIDUAL OUTPUT
+
+
+     ESTIMATED MODEL AND RESIDUALS (OBSERVED - ESTIMATED)
+
+
+           Model Estimated Means/Intercepts/Thresholds
+              VDMDE1Z       VDMDE2Z       VDMDE3$1      VDMDE4Z       VDMDE5Z
+              ________      ________      ________      ________      ________
+                0.512         0.300        -1.326         0.528         0.424
+
+
+           Residuals for Means/Intercepts/Thresholds
+              VDMDE1Z       VDMDE2Z       VDMDE3$1      VDMDE4Z       VDMDE5Z
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.000         0.000
+
+
+           Model Estimated Covariances/Correlations/Residual Correlations
+              VDMDE1Z       VDMDE2Z       VDMDE3        VDMDE4Z       VDMDE5Z
+              ________      ________      ________      ________      ________
+ VDMDE1Z        0.070
+ VDMDE2Z        0.035         0.046
+ VDMDE3         0.167         0.129
+ VDMDE4Z        0.040         0.031         0.151         0.087
+ VDMDE5Z        0.038         0.029         0.140         0.034         0.076
+
+
+           Model Estimated Correlations/Residual Correlations
+              VDMDE1Z       VDMDE2Z       VDMDE3        VDMDE4Z       VDMDE5Z
+              ________      ________      ________      ________      ________
+ VDMDE1Z        1.000
+ VDMDE2Z        0.609         1.000
+ VDMDE3         0.632         0.599
+ VDMDE4Z        0.519         0.492         0.511         1.000
+ VDMDE5Z        0.516         0.489         0.508         0.417         1.000
+
+
+           Residuals for Covariances/Correlations/Residual Correlations
+              VDMDE1Z       VDMDE2Z       VDMDE3        VDMDE4Z       VDMDE5Z
+              ________      ________      ________      ________      ________
+ VDMDE1Z        0.000
+ VDMDE2Z       -0.001         0.000
+ VDMDE3         0.000         0.002
+ VDMDE4Z        0.003        -0.002         0.002         0.000
+ VDMDE5Z       -0.001         0.003        -0.007        -0.001         0.000
+
+
+           Residuals for Correlations/Residual Correlations
+              VDMDE1Z       VDMDE2Z       VDMDE3        VDMDE4Z       VDMDE5Z
+              ________      ________      ________      ________      ________
+ VDMDE1Z        0.000
+ VDMDE2Z       -0.021         0.000
+ VDMDE3         0.000         0.010
+ VDMDE4Z        0.035        -0.029         0.008         0.000
+ VDMDE5Z       -0.013         0.051        -0.025        -0.016         0.000
+
+
+     UNIVARIATE PROPORTIONS FOR CATEGORICAL VARIABLES
+
+     Variable          Observed      Estimated      Residual (Obs.-Est.)    Stand. Residual
+     VDMDE3
+       Category  1       0.092          0.092                  0.000                0.000
+       Category  2       0.908          0.908                  0.000                0.000
+
+
+MODEL MODIFICATION INDICES
+
+NOTE:  Modification indices for direct effects of observed dependent variables
+regressed on covariates and residual covariances among observed dependent
+variables may not be included.  To include these, request MODINDICES (ALL).
+
+Minimum M.I. value for printing the modification index     0.000
+
+                                   M.I.     E.P.C.  Std E.P.C.  StdYX E.P.C.
+
+WITH Statements
+
+VDMDE2Z  WITH VDMDE1Z              7.149    -0.003     -0.003       -0.130
+VDMDE3   WITH VDMDE1Z              0.003     0.000      0.000       -0.003
+VDMDE3   WITH VDMDE2Z              1.135     0.004      0.004        0.052
+VDMDE4Z  WITH VDMDE1Z             19.892     0.006      0.006        0.163
+VDMDE4Z  WITH VDMDE2Z             12.778    -0.004     -0.004       -0.115
+VDMDE4Z  WITH VDMDE3               0.775     0.004      0.004        0.032
+VDMDE5Z  WITH VDMDE1Z              2.747    -0.002     -0.002       -0.061
+VDMDE5Z  WITH VDMDE2Z             31.259     0.006      0.006        0.188
+VDMDE5Z  WITH VDMDE3               4.564    -0.011     -0.011       -0.085
+VDMDE5Z  WITH VDMDE4Z              3.649    -0.002     -0.002       -0.047
+
+
+     Beginning Time:  09:11:00
+        Ending Time:  09:11:00
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2018 Muthen & Muthen

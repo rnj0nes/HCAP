@@ -1,0 +1,340 @@
+Mplus VERSION 8.2 (Mac)
+MUTHEN & MUTHEN
+05/26/2020   9:10 AM
+
+INPUT INSTRUCTIONS
+
+  TITLE:
+    Variable List -
+
+    vdexf1z : vdexf1_z1 = (vdexf1 -        .002350383874)/         17.00470077
+    vdexf2z : vdexf2_z1 = (vdexf2 -      .00004915522373)/         .3924776838
+    vdexf7z : vdexf7_z1 = (vdexf7 -          409.0197119)/         175.0394239
+
+  DATA:
+    FILE = __000001.dat ;
+  VARIABLE:
+    NAMES =
+      vdexf1z vdexf2z vdexf7z ;
+    MISSING ARE ALL (-9999) ;
+  ANALYSIS:
+  OUTPUT:
+     MODINDICES(-0);
+     RESIDUAL ;
+  stdyx  ;
+
+  MODEL:
+  exf by vdexf1z vdexf2z vdexf7z  ;
+
+
+
+
+*** WARNING
+  Data set contains cases with missing on all variables.
+  These cases were not included in the analysis.
+  Number of cases with missing on all variables:  38
+   1 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+
+Variable List -
+
+vdexf1z : vdexf1_z1 = (vdexf1 -        .002350383874)/         17.00470077
+vdexf2z : vdexf2_z1 = (vdexf2 -      .00004915522373)/         .3924776838
+vdexf7z : vdexf7_z1 = (vdexf7 -          409.0197119)/         175.0394239
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                        3309
+
+Number of dependent variables                                    3
+Number of independent variables                                  0
+Number of continuous latent variables                            1
+
+Observed dependent variables
+
+  Continuous
+   VDEXF1Z     VDEXF2Z     VDEXF7Z
+
+Continuous latent variables
+   EXF
+
+
+Estimator                                                       ML
+Information matrix                                        OBSERVED
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+
+Input data file(s)
+  __000001.dat
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns             7
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              VDEXF1Z       VDEXF2Z       VDEXF7Z
+              ________      ________      ________
+ VDEXF1Z        0.998
+ VDEXF2Z        0.854         0.854
+ VDEXF7Z        0.837         0.763         0.839
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     VDEXF1Z               0.726      -1.012       0.000    1.00%       0.529      0.706      0.765
+            3303.000       0.049       0.704       1.000    9.11%       0.823      0.941
+     VDEXF2Z               0.428      -0.142       0.000    1.03%       0.251      0.384      0.432
+            2827.000       0.040      -0.643       1.000    0.04%       0.495      0.608
+     VDEXF7Z               0.647      -0.798       0.000    0.79%       0.526      0.623      0.663
+            2775.000       0.032       1.679       1.000    3.60%       0.686      0.783
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                        9
+
+Loglikelihood
+
+          H0 Value                        2720.125
+          H1 Value                        2720.125
+
+Information Criteria
+
+          Akaike (AIC)                   -5422.249
+          Bayesian (BIC)                 -5367.309
+          Sample-Size Adjusted BIC       -5395.906
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                              0.000
+          Degrees of Freedom                     0
+          P-Value                           0.0000
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.000
+          90 Percent C.I.                    0.000  0.000
+          Probability RMSEA <= .05           0.000
+
+CFI/TLI
+
+          CFI                                1.000
+          TLI                                1.000
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                           2140.442
+          Degrees of Freedom                     3
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.000
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ EXF      BY
+    VDEXF1Z            1.000      0.000    999.000    999.000
+    VDEXF2Z            0.803      0.027     29.236      0.000
+    VDEXF7Z            0.878      0.028     31.913      0.000
+
+ Intercepts
+    VDEXF1Z            0.726      0.004    188.679      0.000
+    VDEXF2Z            0.405      0.004    103.622      0.000
+    VDEXF7Z            0.620      0.004    172.287      0.000
+
+ Variances
+    EXF                0.032      0.001     22.450      0.000
+
+ Residual Variances
+    VDEXF1Z            0.017      0.001     18.138      0.000
+    VDEXF2Z            0.024      0.001     28.781      0.000
+    VDEXF7Z            0.013      0.001     17.894      0.000
+
+
+STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ EXF      BY
+    VDEXF1Z            0.805      0.012     64.844      0.000
+    VDEXF2Z            0.681      0.015     46.907      0.000
+    VDEXF7Z            0.809      0.013     62.776      0.000
+
+ Intercepts
+    VDEXF1Z            3.282      0.044     74.615      0.000
+    VDEXF2Z            1.931      0.035     54.915      0.000
+    VDEXF7Z            3.208      0.053     60.749      0.000
+
+ Variances
+    EXF                1.000      0.000    999.000    999.000
+
+ Residual Variances
+    VDEXF1Z            0.352      0.020     17.624      0.000
+    VDEXF2Z            0.536      0.020     27.047      0.000
+    VDEXF7Z            0.345      0.021     16.522      0.000
+
+
+R-SQUARE
+
+    Observed                                        Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    VDEXF1Z            0.648      0.020     32.422      0.000
+    VDEXF2Z            0.464      0.020     23.453      0.000
+    VDEXF7Z            0.655      0.021     31.388      0.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.247E-03
+       (ratio of smallest to largest eigenvalue)
+
+
+RESIDUAL OUTPUT
+
+
+     ESTIMATED MODEL AND RESIDUALS (OBSERVED - ESTIMATED)
+
+
+           Model Estimated Means
+              VDEXF1Z       VDEXF2Z       VDEXF7Z
+              ________      ________      ________
+                0.726         0.405         0.620
+
+
+           Residuals for Means
+              VDEXF1Z       VDEXF2Z       VDEXF7Z
+              ________      ________      ________
+                0.000         0.000         0.000
+
+
+           Standardized Residuals (z-scores) for Means
+              VDEXF1Z       VDEXF2Z       VDEXF7Z
+              ________      ________      ________
+                0.000         0.000         0.000
+
+
+           Normalized Residuals for Means
+              VDEXF1Z       VDEXF2Z       VDEXF7Z
+              ________      ________      ________
+                0.000         0.000         0.000
+
+
+           Model Estimated Covariances
+              VDEXF1Z       VDEXF2Z       VDEXF7Z
+              ________      ________      ________
+ VDEXF1Z        0.049
+ VDEXF2Z        0.025         0.044
+ VDEXF7Z        0.028         0.022         0.037
+
+
+           Model Estimated Correlations
+              VDEXF1Z       VDEXF2Z       VDEXF7Z
+              ________      ________      ________
+ VDEXF1Z        1.000
+ VDEXF2Z        0.549         1.000
+ VDEXF7Z        0.651         0.552         1.000
+
+
+           Residuals for Covariances
+              VDEXF1Z       VDEXF2Z       VDEXF7Z
+              ________      ________      ________
+ VDEXF1Z        0.000
+ VDEXF2Z        0.000         0.000
+ VDEXF7Z        0.000         0.000         0.000
+
+
+           Residuals for Correlations
+              VDEXF1Z       VDEXF2Z       VDEXF7Z
+              ________      ________      ________
+ VDEXF1Z        0.000
+ VDEXF2Z        0.000         0.000
+ VDEXF7Z        0.000         0.000         0.000
+
+
+           Standardized Residuals (z-scores) for Covariances
+              VDEXF1Z       VDEXF2Z       VDEXF7Z
+              ________      ________      ________
+ VDEXF1Z        0.000
+ VDEXF2Z        0.000         0.000
+ VDEXF7Z        0.000         0.000         0.000
+
+
+           Normalized Residuals for Covariances
+              VDEXF1Z       VDEXF2Z       VDEXF7Z
+              ________      ________      ________
+ VDEXF1Z        0.000
+ VDEXF2Z        0.000         0.000
+ VDEXF7Z        0.000         0.000         0.000
+
+
+MODEL MODIFICATION INDICES
+
+NOTE:  Modification indices for direct effects of observed dependent variables
+regressed on covariates may not be included.  To include these, request
+MODINDICES (ALL).
+
+Minimum M.I. value for printing the modification index     0.000
+
+                                   M.I.     E.P.C.  Std E.P.C.  StdYX E.P.C.
+
+No modification indices above the minimum value.
+
+
+
+     Beginning Time:  09:10:51
+        Ending Time:  09:10:51
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2018 Muthen & Muthen

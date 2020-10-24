@@ -1,0 +1,322 @@
+Mplus VERSION 8.2 (Mac)
+MUTHEN & MUTHEN
+05/26/2020   9:10 AM
+
+INPUT INSTRUCTIONS
+
+  TITLE:
+    Variable List -
+
+    vdmre1z : vdmre1_z1 = (vdmre1 -        .001549909736)/         20.00309982
+    vdmre2z : vdmre2_z1 = (vdmre2 -        .001713271102)/         15.00342654
+
+  DATA:
+    FILE = __000001.dat ;
+  VARIABLE:
+    NAMES =
+      vdmre1z vdmre2z ;
+    MISSING ARE ALL (-9999) ;
+  ANALYSIS:
+  OUTPUT:
+     MODINDICES(-0);
+     RESIDUAL ;
+  stdyx  ;
+
+  MODEL:
+  mre by vdmre1z@1 vdmre2z@1 ;
+
+
+
+
+*** WARNING
+  Data set contains cases with missing on all variables.
+  These cases were not included in the analysis.
+  Number of cases with missing on all variables:  12
+   1 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+
+Variable List -
+
+vdmre1z : vdmre1_z1 = (vdmre1 -        .001549909736)/         20.00309982
+vdmre2z : vdmre2_z1 = (vdmre2 -        .001713271102)/         15.00342654
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                        3335
+
+Number of dependent variables                                    2
+Number of independent variables                                  0
+Number of continuous latent variables                            1
+
+Observed dependent variables
+
+  Continuous
+   VDMRE1Z     VDMRE2Z
+
+Continuous latent variables
+   MRE
+
+
+Estimator                                                       ML
+Information matrix                                        OBSERVED
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+
+Input data file(s)
+  __000001.dat
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns             3
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              VDMRE1Z       VDMRE2Z
+              ________      ________
+ VDMRE1Z        0.999
+ VDMRE2Z        0.971         0.972
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     VDMRE1Z               0.925      -2.851       0.000    0.21%       0.850      0.950      0.950
+            3330.000       0.015      11.499       1.000   49.67%       1.000      1.000
+     VDMRE2Z               0.685      -0.698       0.000    0.49%       0.533      0.667      0.733
+            3243.000       0.033       0.636       1.000    2.78%       0.733      0.867
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                        5
+
+Loglikelihood
+
+          H0 Value                        3468.054
+          H1 Value                        3468.054
+
+Information Criteria
+
+          Akaike (AIC)                   -6926.108
+          Bayesian (BIC)                 -6895.547
+          Sample-Size Adjusted BIC       -6911.434
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                              0.000
+          Degrees of Freedom                     0
+          P-Value                           0.0000
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.000
+          90 Percent C.I.                    0.000  0.000
+          Probability RMSEA <= .05           0.000
+
+CFI/TLI
+
+          CFI                                1.000
+          TLI                                1.000
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                            658.119
+          Degrees of Freedom                     1
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.000
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ MRE      BY
+    VDMRE1Z            1.000      0.000    999.000    999.000
+    VDMRE2Z            1.000      0.000    999.000    999.000
+
+ Intercepts
+    VDMRE1Z            0.924      0.002    430.408      0.000
+    VDMRE2Z            0.682      0.003    210.131      0.000
+
+ Variances
+    MRE                0.010      0.000     22.533      0.000
+
+ Residual Variances
+    VDMRE1Z            0.005      0.000     12.357      0.000
+    VDMRE2Z            0.024      0.001     34.350      0.000
+
+
+STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ MRE      BY
+    VDMRE1Z            0.822      0.015     54.062      0.000
+    VDMRE2Z            0.551      0.010     56.618      0.000
+
+ Intercepts
+    VDMRE1Z            7.457      0.093     80.162      0.000
+    VDMRE2Z            3.683      0.050     73.162      0.000
+
+ Variances
+    MRE                1.000      0.000    999.000    999.000
+
+ Residual Variances
+    VDMRE1Z            0.324      0.025     12.965      0.000
+    VDMRE2Z            0.697      0.011     65.039      0.000
+
+
+R-SQUARE
+
+    Observed                                        Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    VDMRE1Z            0.676      0.025     27.031      0.000
+    VDMRE2Z            0.303      0.011     28.309      0.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.558E-02
+       (ratio of smallest to largest eigenvalue)
+
+
+RESIDUAL OUTPUT
+
+
+     ESTIMATED MODEL AND RESIDUALS (OBSERVED - ESTIMATED)
+
+
+           Model Estimated Means
+              VDMRE1Z       VDMRE2Z
+              ________      ________
+                0.924         0.682
+
+
+           Residuals for Means
+              VDMRE1Z       VDMRE2Z
+              ________      ________
+                0.000         0.000
+
+
+           Standardized Residuals (z-scores) for Means
+              VDMRE1Z       VDMRE2Z
+              ________      ________
+                0.000         0.000
+
+
+           Normalized Residuals for Means
+              VDMRE1Z       VDMRE2Z
+              ________      ________
+                0.000         0.000
+
+
+           Model Estimated Covariances
+              VDMRE1Z       VDMRE2Z
+              ________      ________
+ VDMRE1Z        0.015
+ VDMRE2Z        0.010         0.034
+
+
+           Model Estimated Correlations
+              VDMRE1Z       VDMRE2Z
+              ________      ________
+ VDMRE1Z        1.000
+ VDMRE2Z        0.453         1.000
+
+
+           Residuals for Covariances
+              VDMRE1Z       VDMRE2Z
+              ________      ________
+ VDMRE1Z        0.000
+ VDMRE2Z        0.000         0.000
+
+
+           Residuals for Correlations
+              VDMRE1Z       VDMRE2Z
+              ________      ________
+ VDMRE1Z        0.000
+ VDMRE2Z        0.000         0.000
+
+
+           Standardized Residuals (z-scores) for Covariances
+              VDMRE1Z       VDMRE2Z
+              ________      ________
+ VDMRE1Z        0.000
+ VDMRE2Z        0.000         0.000
+
+
+           Normalized Residuals for Covariances
+              VDMRE1Z       VDMRE2Z
+              ________      ________
+ VDMRE1Z        0.000
+ VDMRE2Z        0.000         0.000
+
+
+MODEL MODIFICATION INDICES
+
+NOTE:  Modification indices for direct effects of observed dependent variables
+regressed on covariates may not be included.  To include these, request
+MODINDICES (ALL).
+
+Minimum M.I. value for printing the modification index     0.000
+
+                                   M.I.     E.P.C.  Std E.P.C.  StdYX E.P.C.
+
+No modification indices above the minimum value.
+
+
+
+     Beginning Time:  09:10:51
+        Ending Time:  09:10:51
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2018 Muthen & Muthen

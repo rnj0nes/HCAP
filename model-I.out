@@ -1,0 +1,323 @@
+Mplus VERSION 8.2 (Mac)
+MUTHEN & MUTHEN
+05/26/2020   9:10 AM
+
+INPUT INSTRUCTIONS
+
+  TITLE:
+    Variable List -
+
+    vdori1z : vdori1_z1 = (vdori1 -       .0008432221464)/         10.00168644
+    vdori2 : TICS name president correct (0,1)
+
+  DATA:
+    FILE = __000001.dat ;
+  VARIABLE:
+    NAMES =
+      vdori1z vdori2 ;
+    MISSING ARE ALL (-9999) ;
+    CATEGORICAL =
+      vdori2
+      ;
+  ANALYSIS:
+  OUTPUT:
+     MODINDICES(-0);
+     RESIDUAL ;
+  stdyx  ;
+
+  MODEL:
+  ori by vdori1z@1 vdori2@1 ;
+
+
+
+
+*** WARNING
+  Data set contains cases with missing on all variables.
+  These cases were not included in the analysis.
+  Number of cases with missing on all variables:  5
+   1 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+
+Variable List -
+
+vdori1z : vdori1_z1 = (vdori1 -       .0008432221464)/         10.00168644
+vdori2 : TICS name president correct (0,1)
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                        3342
+
+Number of dependent variables                                    2
+Number of independent variables                                  0
+Number of continuous latent variables                            1
+
+Observed dependent variables
+
+  Continuous
+   VDORI1Z
+
+  Binary and ordered categorical (ordinal)
+   VDORI2
+
+Continuous latent variables
+   ORI
+
+
+Estimator                                                    WLSMV
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Parameterization                                             DELTA
+Link                                                        PROBIT
+
+Input data file(s)
+  __000001.dat
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns             3
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              VDORI1Z       VDORI2
+              ________      ________
+ VDORI1Z        0.999
+ VDORI2         0.963         0.963
+
+
+UNIVARIATE PROPORTIONS AND COUNTS FOR CATEGORICAL VARIABLES
+
+    VDORI2
+      Category 1    0.019           62.000
+      Category 2    0.981         3157.000
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     VDORI1Z               0.932      -3.238       0.000    0.06%       0.900      1.000      1.000
+            3340.000       0.018      12.660       1.000   64.55%       1.000      1.000
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+     WARNING:  THE RESIDUAL COVARIANCE MATRIX (THETA) IS NOT POSITIVE DEFINITE.
+     THIS COULD INDICATE A NEGATIVE VARIANCE/RESIDUAL VARIANCE FOR AN OBSERVED
+     VARIABLE, A CORRELATION GREATER OR EQUAL TO ONE BETWEEN TWO OBSERVED
+     VARIABLES, OR A LINEAR DEPENDENCY AMONG MORE THAN TWO OBSERVED VARIABLES.
+     CHECK THE RESULTS SECTION FOR MORE INFORMATION.
+     PROBLEM INVOLVING VARIABLE VDORI1Z.
+
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                        4
+
+Chi-Square Test of Model Fit
+
+          Value                              0.000*
+          Degrees of Freedom                     0
+          P-Value                           0.0000
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.000
+          90 Percent C.I.                    0.000  0.000
+          Probability RMSEA <= .05           0.000
+
+CFI/TLI
+
+          CFI                                1.000
+          TLI                                1.000
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                            199.209
+          Degrees of Freedom                     1
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.000
+
+Optimum Function Value for Weighted Least-Squares Estimator
+
+          Value                     0.58250392D-12
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ ORI      BY
+    VDORI1Z            1.000      0.000    999.000    999.000
+    VDORI2             1.000      0.000    999.000    999.000
+
+ Intercepts
+    VDORI1Z            0.932      0.004    213.221      0.000
+
+ Thresholds
+    VDORI2$1          -2.069      0.052    -40.057      0.000
+
+ Variances
+    ORI                0.060      0.004     14.114      0.000
+
+ Residual Variances
+    VDORI1Z           -0.042      0.004    -10.012      0.000
+
+
+STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ ORI      BY
+    VDORI1Z            1.823      0.063     29.068      0.000
+    VDORI2             0.246      0.009     28.228      0.000
+
+ Intercepts
+    VDORI1Z            6.912      0.036    194.189      0.000
+
+ Thresholds
+    VDORI2$1          -2.069      0.052    -40.057      0.000
+
+ Variances
+    ORI                1.000      0.000    999.000    999.000
+
+ Residual Variances
+    VDORI1Z           -2.322    999.000    999.000    999.000
+
+
+R-SQUARE
+
+    Observed                                        Two-Tailed   Residual
+    Variable        Estimate       S.E.  Est./S.E.    P-Value    Variance
+
+    VDORI1Z         Undefined   0.33215E+01
+    VDORI2             0.060      0.004     14.114      0.000      0.940
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.190E-04
+       (ratio of smallest to largest eigenvalue)
+
+
+RESIDUAL OUTPUT
+
+
+     ESTIMATED MODEL AND RESIDUALS (OBSERVED - ESTIMATED)
+
+
+           Model Estimated Means/Intercepts/Thresholds
+              VDORI1Z       VDORI2$1
+              ________      ________
+                0.932        -2.069
+
+
+           Residuals for Means/Intercepts/Thresholds
+              VDORI1Z       VDORI2$1
+              ________      ________
+                0.000         0.000
+
+
+           Model Estimated Covariances/Correlations/Residual Correlations
+              VDORI1Z       VDORI2
+              ________      ________
+ VDORI1Z        0.018
+ VDORI2         0.060
+
+
+           Model Estimated Correlations/Residual Correlations
+              VDORI1Z       VDORI2
+              ________      ________
+ VDORI1Z        1.000
+ VDORI2         0.448
+
+
+           Residuals for Covariances/Correlations/Residual Correlations
+              VDORI1Z       VDORI2
+              ________      ________
+ VDORI1Z        0.000
+ VDORI2         0.000
+
+
+           Residuals for Correlations/Residual Correlations
+              VDORI1Z       VDORI2
+              ________      ________
+ VDORI1Z        0.000
+ VDORI2         0.000
+
+
+     UNIVARIATE PROPORTIONS FOR CATEGORICAL VARIABLES
+
+     Variable          Observed      Estimated      Residual (Obs.-Est.)    Stand. Residual
+     VDORI2
+       Category  1       0.019          0.019                  0.000                0.000
+       Category  2       0.981          0.981                  0.000                0.000
+
+
+MODEL MODIFICATION INDICES
+
+NOTE:  Modification indices for direct effects of observed dependent variables
+regressed on covariates and residual covariances among observed dependent
+variables may not be included.  To include these, request MODINDICES (ALL).
+
+Minimum M.I. value for printing the modification index     0.000
+
+                                   M.I.     E.P.C.  Std E.P.C.  StdYX E.P.C.
+
+No modification indices above the minimum value.
+
+
+
+     Beginning Time:  09:10:48
+        Ending Time:  09:10:48
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2018 Muthen & Muthen

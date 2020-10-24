@@ -1,0 +1,1714 @@
+Mplus VERSION 8.2 (Mac)
+MUTHEN & MUTHEN
+05/26/2020   9:11 AM
+
+INPUT INSTRUCTIONS
+
+  TITLE:
+    Variable List -
+
+    vdmde1z : vdmde1_z1 = (vdmde1 -        .001653405662)/         10.00330681
+    vdmde2z : vdmde2_z1 = (vdmde2 -        .003368133996)/         25.00673627
+    vdmde3 : MMSE 3 word delayed recall (0-3)
+      0: 0-1
+      1: 2
+    vdmde4z : vdmde4_z1 = (vdmde4 -         .00202711025)/         11.00405422
+    vdmde5z : vdmde5_z1 = (vdmde5 -        .002063232012)/         12.00412646
+    vdmre1z : vdmre1_z1 = (vdmre1 -        .001549909736)/         20.00309982
+    vdmre2z : vdmre2_z1 = (vdmre2 -        .001713271102)/         15.00342654
+    vdexf1z : vdexf1_z1 = (vdexf1 -        .002350383874)/         17.00470077
+    vdexf2z : vdexf2_z1 = (vdexf2 -      .00004915522373)/         .3924776838
+    vdexf7z : vdexf7_z1 = (vdexf7 -          409.0197119)/         175.0394239
+    vdasp1z : vdasp1_z1 = (vdasp1 -        .007827027941)/         71.01565406
+    vdasp2z : vdasp2_z1 = (vdasp2 -      .00005338379933)/         .8074956097
+    vdasp3 : MMSE spell world backwards
+    vdasp4z : vdasp4_z1 = (vdasp4 -        .006999674533)/         80.01399935
+    vdasp5z : vdasp5_z1 = (vdasp5 -         .00329259995)/          37.0065852
+    vdlfl1z : vdlfl1_z1 = (vdlfl1 -        .004106468202)/         43.00821294
+    vdlfl2 : Naming 2 items HRS TICS scissors, cactus
+      0: 0-1
+      1: 2
+    vdlfl3 : Naming 2 items MMSE
+      0: 0-1
+      1: 2
+    vdlfl4 : MMSE write a sentence
+    vdlfl5 : MMSE read and follow command
+    vdlfl6 : 1066 object naming
+      0: 0-2
+      1: 3
+      2: 4
+    vdvis1z : vdvis1_z1 = (vdvis1 -        .001456089426)/         11.00291218
+    vdori1z : vdori1_z1 = (vdori1 -       .0008432221464)/         10.00168644
+
+  DATA:
+    FILE = __000001.dat ;
+  VARIABLE:
+    NAMES =
+      vdmde1z vdmde2z vdmde3 vdmde4z vdmde5z vdmre1z vdmre2z vdexf1z
+  vdexf2z vdexf7z vdasp1z vdasp2z vdasp3 vdasp4z vdasp5z vdlfl1z
+  vdlfl2 vdlfl3 vdlfl4 vdlfl5 vdlfl6 vdvis1z vdori1z ;
+    MISSING ARE ALL (-9999) ;
+    CATEGORICAL =
+      vdmde3
+      vdasp3
+      vdlfl2
+      vdlfl3
+      vdlfl4
+      vdlfl5
+      vdlfl6
+      ;
+  ANALYSIS:
+  DIFFTEST is deriv.dat ;
+
+  OUTPUT:
+     MODINDICES(-0);
+     RESIDUAL ;
+  stdyx  ;
+
+  MODEL:
+  mde by vdmde1z vdmde2z vdmde3 vdmde4z vdmde5z vdmre1z vdmre2z  ;
+  exf by vdexf1z vdexf2z vdexf7z  ;
+  exf by vdasp1z vdasp2z vdasp3 vdasp4z vdasp5z  ;
+  lfl by vdlfl1z vdlfl2 vdlfl3 vdlfl4 vdlfl5 vdlfl6  ;
+  vdvis1z with mde exf lfl  ;
+  vdori1z with mde exf lfl  ;
+  vdvis1z with vdori1z  ;
+  ceradwl by vdmde1z@1  ;
+  ceradwl by vdmre1z@1  ;
+  lm by vdmde2z@1  ;
+  lm by vdmre2z@1  ;
+  ceradwl with lm@0  ;
+  ceradwl lm with mde@0 exf@0 lfl@0 vdvis1z@0 vdori1z@0  ;
+
+
+
+
+INPUT READING TERMINATED NORMALLY
+
+
+
+
+Variable List -
+
+vdmde1z : vdmde1_z1 = (vdmde1 -        .001653405662)/         10.00330681
+vdmde2z : vdmde2_z1 = (vdmde2 -        .003368133996)/         25.00673627
+vdmde3 : MMSE 3 word delayed recall (0-3)
+0: 0-1
+1: 2
+vdmde4z : vdmde4_z1 = (vdmde4 -         .00202711025)/         11.00405422
+vdmde5z : vdmde5_z1 = (vdmde5 -        .002063232012)/         12.00412646
+vdmre1z : vdmre1_z1 = (vdmre1 -        .001549909736)/         20.00309982
+vdmre2z : vdmre2_z1 = (vdmre2 -        .001713271102)/         15.00342654
+vdexf1z : vdexf1_z1 = (vdexf1 -        .002350383874)/         17.00470077
+vdexf2z : vdexf2_z1 = (vdexf2 -      .00004915522373)/         .3924776838
+vdexf7z : vdexf7_z1 = (vdexf7 -          409.0197119)/         175.0394239
+vdasp1z : vdasp1_z1 = (vdasp1 -        .007827027941)/         71.01565406
+vdasp2z : vdasp2_z1 = (vdasp2 -      .00005338379933)/         .8074956097
+vdasp3 : MMSE spell world backwards
+vdasp4z : vdasp4_z1 = (vdasp4 -        .006999674533)/         80.01399935
+vdasp5z : vdasp5_z1 = (vdasp5 -         .00329259995)/          37.0065852
+vdlfl1z : vdlfl1_z1 = (vdlfl1 -        .004106468202)/         43.00821294
+vdlfl2 : Naming 2 items HRS TICS scissors, cactus
+0: 0-1
+1: 2
+vdlfl3 : Naming 2 items MMSE
+0: 0-1
+1: 2
+vdlfl4 : MMSE write a sentence
+vdlfl5 : MMSE read and follow command
+vdlfl6 : 1066 object naming
+0: 0-2
+1: 3
+2: 4
+vdvis1z : vdvis1_z1 = (vdvis1 -        .001456089426)/         11.00291218
+vdori1z : vdori1_z1 = (vdori1 -       .0008432221464)/         10.00168644
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                        3347
+
+Number of dependent variables                                   23
+Number of independent variables                                  0
+Number of continuous latent variables                            5
+
+Observed dependent variables
+
+  Continuous
+   VDMDE1Z     VDMDE2Z     VDMDE4Z     VDMDE5Z     VDMRE1Z     VDMRE2Z
+   VDEXF1Z     VDEXF2Z     VDEXF7Z     VDASP1Z     VDASP2Z     VDASP4Z
+   VDASP5Z     VDLFL1Z     VDVIS1Z     VDORI1Z
+
+  Binary and ordered categorical (ordinal)
+   VDMDE3      VDASP3      VDLFL2      VDLFL3      VDLFL4      VDLFL5
+   VDLFL6
+
+Continuous latent variables
+   MDE         EXF         LFL         CERADWL     LM
+
+
+Estimator                                                    WLSMV
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Parameterization                                             DELTA
+Link                                                        PROBIT
+
+Input data file(s)
+  __000001.dat
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns           229
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              VDMDE1Z       VDMDE2Z       VDMDE3        VDMDE4Z       VDMDE5Z
+              ________      ________      ________      ________      ________
+ VDMDE1Z        0.993
+ VDMDE2Z        0.908         0.910
+ VDMDE3         0.978         0.899         0.982
+ VDMDE4Z        0.982         0.905         0.971         0.987
+ VDMDE5Z        0.971         0.910         0.961         0.968         0.975
+ VDMRE1Z        0.991         0.909         0.978         0.985         0.973
+ VDMRE2Z        0.967         0.909         0.957         0.963         0.969
+ VDEXF1Z        0.982         0.905         0.972         0.980         0.967
+ VDEXF2Z        0.842         0.784         0.839         0.841         0.834
+ VDEXF7Z        0.829         0.771         0.823         0.827         0.820
+ VDASP1Z        0.943         0.872         0.935         0.942         0.931
+ VDASP2Z        0.955         0.882         0.947         0.955         0.942
+ VDASP3         0.944         0.872         0.936         0.938         0.929
+ VDASP4Z        0.976         0.898         0.966         0.970         0.959
+ VDASP5Z        0.952         0.877         0.942         0.950         0.936
+ VDLFL1Z        0.993         0.910         0.982         0.987         0.975
+ VDLFL2         0.990         0.908         0.980         0.984         0.972
+ VDLFL3         0.991         0.909         0.981         0.985         0.973
+ VDLFL4         0.961         0.886         0.952         0.958         0.945
+ VDLFL5         0.987         0.905         0.976         0.981         0.968
+ VDLFL6         0.993         0.910         0.981         0.987         0.975
+ VDVIS1Z        0.983         0.904         0.973         0.981         0.967
+ VDORI1Z        0.992         0.910         0.982         0.985         0.974
+
+
+           Covariance Coverage
+              VDMRE1Z       VDMRE2Z       VDEXF1Z       VDEXF2Z       VDEXF7Z
+              ________      ________      ________      ________      ________
+ VDMRE1Z        0.995
+ VDMRE2Z        0.967         0.969
+ VDEXF1Z        0.985         0.963         0.987
+ VDEXF2Z        0.844         0.832         0.844         0.845
+ VDEXF7Z        0.829         0.819         0.828         0.754         0.829
+ VDASP1Z        0.945         0.928         0.945         0.836         0.817
+ VDASP2Z        0.958         0.938         0.958         0.842         0.821
+ VDASP3         0.946         0.926         0.939         0.821         0.814
+ VDASP4Z        0.978         0.955         0.970         0.841         0.826
+ VDASP5Z        0.953         0.932         0.951         0.833         0.816
+ VDLFL1Z        0.995         0.969         0.987         0.845         0.829
+ VDLFL2         0.991         0.967         0.984         0.845         0.829
+ VDLFL3         0.992         0.968         0.985         0.845         0.829
+ VDLFL4         0.963         0.941         0.958         0.833         0.824
+ VDLFL5         0.989         0.963         0.982         0.844         0.828
+ VDLFL6         0.995         0.969         0.987         0.845         0.829
+ VDVIS1Z        0.986         0.962         0.982         0.844         0.829
+ VDORI1Z        0.993         0.968         0.986         0.845         0.829
+
+
+           Covariance Coverage
+              VDASP1Z       VDASP2Z       VDASP3        VDASP4Z       VDASP5Z
+              ________      ________      ________      ________      ________
+ VDASP1Z        0.947
+ VDASP2Z        0.936         0.959
+ VDASP3         0.911         0.918         0.949
+ VDASP4Z        0.938         0.949         0.940         0.980
+ VDASP5Z        0.934         0.938         0.916         0.945         0.955
+ VDLFL1Z        0.947         0.959         0.949         0.980         0.955
+ VDLFL2         0.946         0.958         0.948         0.979         0.954
+ VDLFL3         0.947         0.958         0.948         0.979         0.954
+ VDLFL4         0.930         0.939         0.935         0.953         0.936
+ VDLFL5         0.944         0.956         0.947         0.976         0.952
+ VDLFL6         0.947         0.959         0.947         0.980         0.955
+ VDVIS1Z        0.946         0.958         0.940         0.973         0.952
+ VDORI1Z        0.947         0.958         0.949         0.980         0.955
+
+
+           Covariance Coverage
+              VDLFL1Z       VDLFL2        VDLFL3        VDLFL4        VDLFL5
+              ________      ________      ________      ________      ________
+ VDLFL1Z        0.999
+ VDLFL2         0.996         0.996
+ VDLFL3         0.997         0.995         0.997
+ VDLFL4         0.967         0.964         0.965         0.967
+ VDLFL5         0.993         0.990         0.992         0.964         0.993
+ VDLFL6         0.998         0.995         0.996         0.965         0.991
+ VDVIS1Z        0.988         0.986         0.987         0.962         0.984
+ VDORI1Z        0.998         0.996         0.996         0.966         0.992
+
+
+           Covariance Coverage
+              VDLFL6        VDVIS1Z       VDORI1Z
+              ________      ________      ________
+ VDLFL6         0.998
+ VDVIS1Z        0.988         0.988
+ VDORI1Z        0.996         0.987         0.998
+
+
+UNIVARIATE PROPORTIONS AND COUNTS FOR CATEGORICAL VARIABLES
+
+    VDMDE3
+      Category 1    0.092          304.000
+      Category 2    0.908         2983.000
+    VDASP3
+      Category 1    0.016           52.000
+      Category 2    0.027           87.000
+      Category 3    0.050          159.000
+      Category 4    0.106          338.000
+      Category 5    0.047          150.000
+      Category 6    0.753         2390.000
+    VDLFL2
+      Category 1    0.086          287.000
+      Category 2    0.914         3047.000
+    VDLFL3
+      Category 1    0.012           40.000
+      Category 2    0.988         3298.000
+    VDLFL4
+      Category 1    0.066          213.000
+      Category 2    0.934         3023.000
+    VDLFL5
+      Category 1    0.039          129.000
+      Category 2    0.961         3195.000
+    VDLFL6
+      Category 1    0.036          121.000
+      Category 2    0.209          698.000
+      Category 3    0.755         2522.000
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     VDMDE1Z               0.512      -0.283       0.000    8.09%       0.300      0.500      0.500
+            3324.000       0.070      -0.646       1.000    3.22%       0.600      0.700
+     VDMDE2Z               0.300       0.201       0.000   16.97%       0.080      0.240      0.280
+            3046.000       0.046      -0.892       1.000    0.03%       0.360      0.520
+     VDMDE4Z               0.528      -0.174       0.000    9.87%       0.273      0.455      0.545
+            3303.000       0.087      -0.840       1.000    9.81%       0.636      0.818
+     VDMDE5Z               0.424      -0.257       0.000   19.25%       0.083      0.417      0.500
+            3262.000       0.076      -1.059       1.000    0.58%       0.500      0.667
+     VDMRE1Z               0.925      -2.851       0.000    0.21%       0.850      0.950      0.950
+            3330.000       0.015      11.499       1.000   49.67%       1.000      1.000
+     VDMRE2Z               0.685      -0.698       0.000    0.49%       0.533      0.667      0.733
+            3243.000       0.033       0.636       1.000    2.78%       0.733      0.867
+     VDEXF1Z               0.726      -1.012       0.000    1.00%       0.529      0.706      0.765
+            3303.000       0.049       0.704       1.000    9.11%       0.823      0.941
+     VDEXF2Z               0.428      -0.142       0.000    1.03%       0.251      0.384      0.432
+            2827.000       0.040      -0.643       1.000    0.04%       0.495      0.608
+     VDEXF7Z               0.647      -0.798       0.000    0.79%       0.526      0.623      0.663
+            2775.000       0.032       1.679       1.000    3.60%       0.686      0.783
+     VDASP1Z               0.458      -0.216       0.000    0.44%       0.296      0.423      0.465
+            3168.000       0.031      -0.445       1.000    0.03%       0.507      0.620
+     VDASP2Z               0.397      -0.706       0.000    0.16%       0.319      0.389      0.412
+            3210.000       0.011       1.040       1.000    0.03%       0.432      0.479
+     VDASP4Z               0.369      -0.150       0.000    1.28%       0.263      0.350      0.375
+            3280.000       0.020       0.520       1.000    0.03%       0.400      0.475
+     VDASP5Z               0.400      -0.137       0.000    0.84%       0.297      0.378      0.405
+            3197.000       0.020       0.378       1.000    0.03%       0.432      0.514
+     VDLFL1Z               0.371       0.255       0.000    0.84%       0.233      0.326      0.372
+            3345.000       0.023       0.116       1.000    0.03%       0.395      0.488
+     VDVIS1Z               0.743      -0.585       0.000    0.33%       0.545      0.636      0.727
+            3308.000       0.045      -0.162       1.000   21.61%       0.818      1.000
+     VDORI1Z               0.932      -3.238       0.000    0.06%       0.900      1.000      1.000
+            3340.000       0.018      12.660       1.000   64.55%       1.000      1.000
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       77
+
+Chi-Square Test of Model Fit
+
+          Value                           1777.314*
+          Degrees of Freedom                   220
+          P-Value                           0.0000
+
+Chi-Square Test for Difference Testing
+
+          Value                            138.524*
+          Degrees of Freedom                     5
+          P-Value                           0.0000
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.  The DIFFTEST
+    option assumes the models are nested.  The NESTED option can be used to verify
+    that the models are nested.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.046
+          90 Percent C.I.                    0.044  0.048
+          Probability RMSEA <= .05           1.000
+
+CFI/TLI
+
+          CFI                                0.945
+          TLI                                0.937
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                          28543.008
+          Degrees of Freedom                   253
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.047
+
+Optimum Function Value for Weighted Least-Squares Estimator
+
+          Value                     0.15504114D+00
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ MDE      BY
+    VDMDE1Z            1.000      0.000    999.000    999.000
+    VDMDE2Z            0.752      0.024     30.860      0.000
+    VDMDE3             3.629      0.121     30.054      0.000
+    VDMDE4Z            1.090      0.033     32.974      0.000
+    VDMDE5Z            0.800      0.031     26.135      0.000
+    VDMRE1Z            0.398      0.012     34.510      0.000
+    VDMRE2Z            0.546      0.018     29.676      0.000
+
+ EXF      BY
+    VDEXF1Z            1.000      0.000    999.000    999.000
+    VDEXF2Z            0.817      0.029     28.446      0.000
+    VDEXF7Z            0.648      0.019     34.087      0.000
+    VDASP1Z            0.901      0.024     36.811      0.000
+    VDASP2Z            0.482      0.013     38.435      0.000
+    VDASP3             3.554      0.111     31.951      0.000
+    VDASP4Z            0.570      0.016     35.137      0.000
+    VDASP5Z            0.576      0.017     34.793      0.000
+
+ LFL      BY
+    VDLFL1Z            1.000      0.000    999.000    999.000
+    VDLFL2             6.229      0.223     27.943      0.000
+    VDLFL3             5.557      0.400     13.876      0.000
+    VDLFL4             4.713      0.272     17.297      0.000
+    VDLFL5             4.129      0.339     12.193      0.000
+    VDLFL6             4.396      0.189     23.261      0.000
+
+ CERADWL  BY
+    VDMDE1Z            1.000      0.000    999.000    999.000
+    VDMRE1Z            1.000      0.000    999.000    999.000
+
+ LM       BY
+    VDMDE2Z            1.000      0.000    999.000    999.000
+    VDMRE2Z            1.000      0.000    999.000    999.000
+
+ VDVIS1Z  WITH
+    MDE                0.020      0.001     19.950      0.000
+    EXF                0.021      0.001     23.279      0.000
+    LFL                0.014      0.001     22.752      0.000
+    CERADWL            0.000      0.000    999.000    999.000
+    LM                 0.000      0.000    999.000    999.000
+
+ VDORI1Z  WITH
+    MDE                0.018      0.001     29.163      0.000
+    EXF                0.012      0.000     26.737      0.000
+    LFL                0.008      0.000     27.608      0.000
+    CERADWL            0.000      0.000    999.000    999.000
+    LM                 0.000      0.000    999.000    999.000
+
+ CERADWL  WITH
+    LM                 0.000      0.000    999.000    999.000
+    MDE                0.000      0.000    999.000    999.000
+    EXF                0.000      0.000    999.000    999.000
+    LFL                0.000      0.000    999.000    999.000
+
+ LM       WITH
+    MDE                0.000      0.000    999.000    999.000
+    EXF                0.000      0.000    999.000    999.000
+    LFL                0.000      0.000    999.000    999.000
+
+ EXF      WITH
+    MDE                0.027      0.001     24.759      0.000
+
+ LFL      WITH
+    MDE                0.020      0.001     24.404      0.000
+    EXF                0.017      0.001     28.119      0.000
+
+ VDVIS1Z  WITH
+    VDORI1Z            0.009      0.000     19.743      0.000
+
+ Means
+    VDVIS1Z            0.743      0.004    182.192      0.000
+    VDORI1Z            0.932      0.004    213.221      0.000
+
+ Intercepts
+    VDMDE1Z            0.512      0.005    108.381      0.000
+    VDMDE2Z            0.300      0.004     75.359      0.000
+    VDMDE4Z            0.528      0.005    101.662      0.000
+    VDMDE5Z            0.424      0.005     84.963      0.000
+    VDMRE1Z            0.925      0.003    271.494      0.000
+    VDMRE2Z            0.685      0.004    192.861      0.000
+    VDEXF1Z            0.726      0.005    148.761      0.000
+    VDEXF2Z            0.428      0.004    112.871      0.000
+    VDEXF7Z            0.647      0.004    172.179      0.000
+    VDASP1Z            0.458      0.003    143.890      0.000
+    VDASP2Z            0.397      0.002    194.306      0.000
+    VDASP4Z            0.369      0.002    150.178      0.000
+    VDASP5Z            0.400      0.003    158.102      0.000
+    VDLFL1Z            0.371      0.003    138.443      0.000
+
+ Thresholds
+    VDMDE3$1          -1.326      0.030    -43.469      0.000
+    VDASP3$1          -2.135      0.055    -38.711      0.000
+    VDASP3$2          -1.709      0.039    -43.625      0.000
+    VDASP3$3          -1.318      0.031    -42.647      0.000
+    VDASP3$4          -0.841      0.025    -33.171      0.000
+    VDASP3$5          -0.682      0.024    -28.168      0.000
+    VDLFL2$1          -1.365      0.031    -44.151      0.000
+    VDLFL3$1          -2.258      0.060    -37.397      0.000
+    VDLFL4$1          -1.508      0.034    -44.283      0.000
+    VDLFL5$1          -1.765      0.040    -44.291      0.000
+    VDLFL6$1          -1.796      0.041    -44.164      0.000
+    VDLFL6$2          -0.690      0.024    -29.150      0.000
+
+ Variances
+    VDVIS1Z            0.045      0.001     35.170      0.000
+    VDORI1Z            0.018      0.000     59.060      0.000
+    MDE                0.042      0.002     19.986      0.000
+    EXF                0.030      0.001     22.983      0.000
+    LFL                0.014      0.001     21.387      0.000
+    CERADWL            0.004      0.000     12.142      0.000
+    LM                 0.006      0.001     11.899      0.000
+
+ Residual Variances
+    VDMDE1Z            0.025      0.001     30.983      0.000
+    VDMDE2Z            0.017      0.001     24.706      0.000
+    VDMDE4Z            0.037      0.001     31.843      0.000
+    VDMDE5Z            0.049      0.002     30.540      0.000
+    VDMRE1Z            0.005      0.000     23.368      0.000
+    VDMRE2Z            0.015      0.001     28.655      0.000
+    VDEXF1Z            0.019      0.001     31.362      0.000
+    VDEXF2Z            0.020      0.001     31.552      0.000
+    VDEXF7Z            0.020      0.000     39.907      0.000
+    VDASP1Z            0.007      0.000     20.831      0.000
+    VDASP2Z            0.004      0.000     31.931      0.000
+    VDASP4Z            0.010      0.000     34.468      0.000
+    VDASP5Z            0.010      0.000     36.900      0.000
+    VDLFL1Z            0.009      0.000     21.101      0.000
+
+
+STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ MDE      BY
+    VDMDE1Z            0.772      0.010     76.763      0.000
+    VDMDE2Z            0.712      0.012     60.481      0.000
+    VDMDE3             0.740      0.019     39.863      0.000
+    VDMDE4Z            0.755      0.010     74.977      0.000
+    VDMDE5Z            0.594      0.014     42.672      0.000
+    VDMRE1Z            0.656      0.010     66.803      0.000
+    VDMRE2Z            0.610      0.013     47.181      0.000
+
+ EXF      BY
+    VDEXF1Z            0.783      0.009     87.313      0.000
+    VDEXF2Z            0.706      0.012     60.000      0.000
+    VDEXF7Z            0.623      0.011     56.840      0.000
+    VDASP1Z            0.886      0.007    125.367      0.000
+    VDASP2Z            0.790      0.008     95.500      0.000
+    VDASP3             0.616      0.017     37.150      0.000
+    VDASP4Z            0.705      0.010     67.448      0.000
+    VDASP5Z            0.701      0.010     69.603      0.000
+
+ LFL      BY
+    VDLFL1Z            0.774      0.013     60.521      0.000
+    VDLFL2             0.736      0.023     32.019      0.000
+    VDLFL3             0.657      0.046     14.230      0.000
+    VDLFL4             0.557      0.031     18.227      0.000
+    VDLFL5             0.488      0.039     12.501      0.000
+    VDLFL6             0.519      0.021     25.165      0.000
+
+ CERADWL  BY
+    VDMDE1Z            0.228      0.011     21.515      0.000
+    VDMRE1Z            0.486      0.020     24.213      0.000
+
+ LM       BY
+    VDMDE2Z            0.368      0.015     24.232      0.000
+    VDMRE2Z            0.434      0.018     24.458      0.000
+
+ VDVIS1Z  WITH
+    MDE                0.469      0.016     29.987      0.000
+    EXF                0.573      0.012     48.122      0.000
+    LFL                0.553      0.017     32.330      0.000
+    CERADWL            0.000      0.000    999.000    999.000
+    LM                 0.000      0.000    999.000    999.000
+
+ VDORI1Z  WITH
+    MDE                0.644      0.012     55.315      0.000
+    EXF                0.528      0.011     46.293      0.000
+    LFL                0.527      0.013     39.967      0.000
+    CERADWL            0.000      0.000    999.000    999.000
+    LM                 0.000      0.000    999.000    999.000
+
+ CERADWL  WITH
+    LM                 0.000      0.000    999.000    999.000
+    MDE                0.000      0.000    999.000    999.000
+    EXF                0.000      0.000    999.000    999.000
+    LFL                0.000      0.000    999.000    999.000
+
+ LM       WITH
+    MDE                0.000      0.000    999.000    999.000
+    EXF                0.000      0.000    999.000    999.000
+    LFL                0.000      0.000    999.000    999.000
+
+ EXF      WITH
+    MDE                0.752      0.010     76.173      0.000
+
+ LFL      WITH
+    MDE                0.819      0.014     59.044      0.000
+    EXF                0.812      0.012     65.159      0.000
+
+ VDVIS1Z  WITH
+    VDORI1Z            0.320      0.014     23.453      0.000
+
+ Means
+    VDVIS1Z            3.512      0.045     77.879      0.000
+    VDORI1Z            6.912      0.036    194.189      0.000
+
+ Intercepts
+    VDMDE1Z            1.938      0.031     62.942      0.000
+    VDMDE2Z            1.391      0.033     41.791      0.000
+    VDMDE4Z            1.792      0.032     56.543      0.000
+    VDMDE5Z            1.543      0.030     51.828      0.000
+    VDMRE1Z            7.459      0.039    193.394      0.000
+    VDMRE2Z            3.751      0.041     92.449      0.000
+    VDEXF1Z            3.284      0.035     93.529      0.000
+    VDEXF2Z            2.139      0.038     56.978      0.000
+    VDEXF7Z            3.594      0.036    100.201      0.000
+    VDASP1Z            2.596      0.039     67.006      0.000
+    VDASP2Z            3.751      0.038     98.575      0.000
+    VDASP4Z            2.634      0.033     80.973      0.000
+    VDASP5Z            2.807      0.035     79.138      0.000
+    VDLFL1Z            2.431      0.037     66.147      0.000
+
+ Thresholds
+    VDMDE3$1          -1.326      0.030    -43.469      0.000
+    VDASP3$1          -2.135      0.055    -38.711      0.000
+    VDASP3$2          -1.709      0.039    -43.625      0.000
+    VDASP3$3          -1.318      0.031    -42.647      0.000
+    VDASP3$4          -0.841      0.025    -33.171      0.000
+    VDASP3$5          -0.682      0.024    -28.168      0.000
+    VDLFL2$1          -1.365      0.031    -44.151      0.000
+    VDLFL3$1          -2.258      0.060    -37.397      0.000
+    VDLFL4$1          -1.508      0.034    -44.283      0.000
+    VDLFL5$1          -1.765      0.040    -44.291      0.000
+    VDLFL6$1          -1.796      0.041    -44.164      0.000
+    VDLFL6$2          -0.690      0.024    -29.150      0.000
+
+ Variances
+    VDVIS1Z            1.000      0.000    999.000    999.000
+    VDORI1Z            1.000      0.000    999.000    999.000
+    MDE                1.000      0.000    999.000    999.000
+    EXF                1.000      0.000    999.000    999.000
+    LFL                1.000      0.000    999.000    999.000
+    CERADWL            1.000      0.000    999.000    999.000
+    LM                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    VDMDE1Z            0.353      0.012     29.236      0.000
+    VDMDE2Z            0.358      0.015     23.503      0.000
+    VDMDE4Z            0.430      0.015     28.321      0.000
+    VDMDE5Z            0.648      0.017     39.194      0.000
+    VDMRE1Z            0.334      0.014     23.513      0.000
+    VDMRE2Z            0.440      0.015     29.392      0.000
+    VDEXF1Z            0.386      0.014     27.464      0.000
+    VDEXF2Z            0.501      0.017     30.163      0.000
+    VDEXF7Z            0.612      0.014     44.778      0.000
+    VDASP1Z            0.216      0.013     17.223      0.000
+    VDASP2Z            0.376      0.013     28.743      0.000
+    VDASP4Z            0.502      0.015     34.041      0.000
+    VDASP5Z            0.508      0.014     36.002      0.000
+    VDLFL1Z            0.402      0.020     20.308      0.000
+
+
+R-SQUARE
+
+    Observed                                        Two-Tailed   Residual
+    Variable        Estimate       S.E.  Est./S.E.    P-Value    Variance
+
+    VDMDE1Z            0.647      0.012     53.638      0.000
+    VDMDE2Z            0.642      0.015     42.094      0.000
+    VDMDE3             0.548      0.028     19.931      0.000      0.452
+    VDMDE4Z            0.570      0.015     37.489      0.000
+    VDMDE5Z            0.352      0.017     21.336      0.000
+    VDMRE1Z            0.666      0.014     46.899      0.000
+    VDMRE2Z            0.560      0.015     37.369      0.000
+    VDEXF1Z            0.614      0.014     43.656      0.000
+    VDEXF2Z            0.499      0.017     30.000      0.000
+    VDEXF7Z            0.388      0.014     28.420      0.000
+    VDASP1Z            0.784      0.013     62.684      0.000
+    VDASP2Z            0.624      0.013     47.750      0.000
+    VDASP3             0.379      0.020     18.575      0.000      0.621
+    VDASP4Z            0.498      0.015     33.724      0.000
+    VDASP5Z            0.492      0.014     34.802      0.000
+    VDLFL1Z            0.598      0.020     30.261      0.000
+    VDLFL2             0.542      0.034     16.010      0.000      0.458
+    VDLFL3             0.431      0.061      7.115      0.000      0.569
+    VDLFL4             0.310      0.034      9.113      0.000      0.690
+    VDLFL5             0.238      0.038      6.251      0.000      0.762
+    VDLFL6             0.270      0.021     12.583      0.000      0.730
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.479E-05
+       (ratio of smallest to largest eigenvalue)
+
+
+RESIDUAL OUTPUT
+
+
+     ESTIMATED MODEL AND RESIDUALS (OBSERVED - ESTIMATED)
+
+
+           Model Estimated Means/Intercepts/Thresholds
+              VDMDE1Z       VDMDE2Z       VDMDE3$1      VDMDE4Z       VDMDE5Z
+              ________      ________      ________      ________      ________
+                0.512         0.300        -1.326         0.528         0.424
+
+
+           Model Estimated Means/Intercepts/Thresholds
+              VDMRE1Z       VDMRE2Z       VDEXF1Z       VDEXF2Z       VDEXF7Z
+              ________      ________      ________      ________      ________
+                0.925         0.685         0.726         0.428         0.647
+
+
+           Model Estimated Means/Intercepts/Thresholds
+              VDASP1Z       VDASP2Z       VDASP3$1      VDASP3$2      VDASP3$3
+              ________      ________      ________      ________      ________
+                0.458         0.397        -2.135        -1.709        -1.318
+
+
+           Model Estimated Means/Intercepts/Thresholds
+              VDASP3$4      VDASP3$5      VDASP4Z       VDASP5Z       VDLFL1Z
+              ________      ________      ________      ________      ________
+               -0.841        -0.682         0.369         0.400         0.371
+
+
+           Model Estimated Means/Intercepts/Thresholds
+              VDLFL2$1      VDLFL3$1      VDLFL4$1      VDLFL5$1      VDLFL6$1
+              ________      ________      ________      ________      ________
+               -1.365        -2.258        -1.508        -1.765        -1.796
+
+
+           Model Estimated Means/Intercepts/Thresholds
+              VDLFL6$2      VDVIS1Z       VDORI1Z
+              ________      ________      ________
+               -0.690         0.743         0.932
+
+
+           Residuals for Means/Intercepts/Thresholds
+              VDMDE1Z       VDMDE2Z       VDMDE3$1      VDMDE4Z       VDMDE5Z
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.000         0.000
+
+
+           Residuals for Means/Intercepts/Thresholds
+              VDMRE1Z       VDMRE2Z       VDEXF1Z       VDEXF2Z       VDEXF7Z
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.000         0.000
+
+
+           Residuals for Means/Intercepts/Thresholds
+              VDASP1Z       VDASP2Z       VDASP3$1      VDASP3$2      VDASP3$3
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.000         0.000
+
+
+           Residuals for Means/Intercepts/Thresholds
+              VDASP3$4      VDASP3$5      VDASP4Z       VDASP5Z       VDLFL1Z
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.000         0.000
+
+
+           Residuals for Means/Intercepts/Thresholds
+              VDLFL2$1      VDLFL3$1      VDLFL4$1      VDLFL5$1      VDLFL6$1
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.000         0.000
+
+
+           Residuals for Means/Intercepts/Thresholds
+              VDLFL6$2      VDVIS1Z       VDORI1Z
+              ________      ________      ________
+                0.000         0.000         0.000
+
+
+           Model Estimated Covariances/Correlations/Residual Correlations
+              VDMDE1Z       VDMDE2Z       VDMDE3        VDMDE4Z       VDMDE5Z
+              ________      ________      ________      ________      ________
+ VDMDE1Z        0.070
+ VDMDE2Z        0.031         0.046
+ VDMDE3         0.151         0.114
+ VDMDE4Z        0.045         0.034         0.165         0.087
+ VDMDE5Z        0.033         0.025         0.121         0.036         0.076
+ VDMRE1Z        0.020         0.012         0.060         0.018         0.013
+ VDMRE2Z        0.023         0.023         0.082         0.025         0.018
+ VDEXF1Z        0.027         0.020         0.097         0.029         0.021
+ VDEXF2Z        0.022         0.016         0.079         0.024         0.017
+ VDEXF7Z        0.017         0.013         0.063         0.019         0.014
+ VDASP1Z        0.024         0.018         0.087         0.026         0.019
+ VDASP2Z        0.013         0.010         0.047         0.014         0.010
+ VDASP3         0.095         0.071         0.343         0.103         0.076
+ VDASP4Z        0.015         0.011         0.055         0.017         0.012
+ VDASP5Z        0.015         0.012         0.056         0.017         0.012
+ VDLFL1Z        0.020         0.015         0.072         0.022         0.016
+ VDLFL2         0.123         0.092         0.446         0.134         0.098
+ VDLFL3         0.110         0.082         0.398         0.120         0.088
+ VDLFL4         0.093         0.070         0.338         0.101         0.074
+ VDLFL5         0.082         0.061         0.296         0.089         0.065
+ VDLFL6         0.087         0.065         0.315         0.095         0.069
+ VDVIS1Z        0.020         0.015         0.073         0.022         0.016
+ VDORI1Z        0.018         0.013         0.064         0.019         0.014
+
+
+           Model Estimated Covariances/Correlations/Residual Correlations
+              VDMRE1Z       VDMRE2Z       VDEXF1Z       VDEXF2Z       VDEXF7Z
+              ________      ________      ________      ________      ________
+ VDMRE1Z        0.015
+ VDMRE2Z        0.009         0.033
+ VDEXF1Z        0.011         0.015         0.049
+ VDEXF2Z        0.009         0.012         0.025         0.040
+ VDEXF7Z        0.007         0.009         0.019         0.016         0.032
+ VDASP1Z        0.010         0.013         0.027         0.022         0.018
+ VDASP2Z        0.005         0.007         0.014         0.012         0.009
+ VDASP3         0.038         0.052         0.107         0.087         0.069
+ VDASP4Z        0.006         0.008         0.017         0.014         0.011
+ VDASP5Z        0.006         0.008         0.017         0.014         0.011
+ VDLFL1Z        0.008         0.011         0.017         0.014         0.011
+ VDLFL2         0.049         0.067         0.104         0.085         0.067
+ VDLFL3         0.044         0.060         0.092         0.075         0.060
+ VDLFL4         0.037         0.051         0.078         0.064         0.051
+ VDLFL5         0.032         0.044         0.069         0.056         0.044
+ VDLFL6         0.035         0.047         0.073         0.060         0.047
+ VDVIS1Z        0.008         0.011         0.021         0.017         0.014
+ VDORI1Z        0.007         0.010         0.012         0.010         0.008
+
+
+           Model Estimated Covariances/Correlations/Residual Correlations
+              VDASP1Z       VDASP2Z       VDASP3        VDASP4Z       VDASP5Z
+              ________      ________      ________      ________      ________
+ VDASP1Z        0.031
+ VDASP2Z        0.013         0.011
+ VDASP3         0.096         0.051
+ VDASP4Z        0.015         0.008         0.061         0.020
+ VDASP5Z        0.016         0.008         0.061         0.010         0.020
+ VDLFL1Z        0.015         0.008         0.059         0.009         0.010
+ VDLFL2         0.093         0.050         0.368         0.059         0.060
+ VDLFL3         0.083         0.045         0.328         0.053         0.053
+ VDLFL4         0.071         0.038         0.278         0.045         0.045
+ VDLFL5         0.062         0.033         0.244         0.039         0.040
+ VDLFL6         0.066         0.035         0.260         0.042         0.042
+ VDVIS1Z        0.019         0.010         0.075         0.012         0.012
+ VDORI1Z        0.011         0.006         0.044         0.007         0.007
+
+
+           Model Estimated Covariances/Correlations/Residual Correlations
+              VDLFL1Z       VDLFL2        VDLFL3        VDLFL4        VDLFL5
+              ________      ________      ________      ________      ________
+ VDLFL1Z        0.023
+ VDLFL2         0.087
+ VDLFL3         0.078         0.483
+ VDLFL4         0.066         0.410         0.366
+ VDLFL5         0.058         0.359         0.320         0.272
+ VDLFL6         0.061         0.382         0.341         0.289         0.253
+ VDVIS1Z        0.014         0.086         0.077         0.065         0.057
+ VDORI1Z        0.008         0.052         0.047         0.040         0.035
+
+
+           Model Estimated Covariances/Correlations/Residual Correlations
+              VDLFL6        VDVIS1Z       VDORI1Z
+              ________      ________      ________
+ VDVIS1Z        0.061         0.045
+ VDORI1Z        0.037         0.009         0.018
+
+
+           Model Estimated Correlations/Residual Correlations
+              VDMDE1Z       VDMDE2Z       VDMDE3        VDMDE4Z       VDMDE5Z
+              ________      ________      ________      ________      ________
+ VDMDE1Z        1.000
+ VDMDE2Z        0.549         1.000
+ VDMDE3         0.571         0.527
+ VDMDE4Z        0.582         0.537         0.559         1.000
+ VDMDE5Z        0.458         0.423         0.440         0.448         1.000
+ VDMRE1Z        0.617         0.467         0.486         0.495         0.389
+ VDMRE2Z        0.470         0.593         0.451         0.460         0.362
+ VDEXF1Z        0.455         0.420         0.436         0.445         0.350
+ VDEXF2Z        0.410         0.378         0.393         0.401         0.315
+ VDEXF7Z        0.362         0.334         0.347         0.354         0.278
+ VDASP1Z        0.514         0.474         0.493         0.503         0.396
+ VDASP2Z        0.459         0.423         0.440         0.449         0.353
+ VDASP3         0.357         0.330         0.343         0.350         0.275
+ VDASP4Z        0.410         0.378         0.393         0.401         0.315
+ VDASP5Z        0.407         0.375         0.391         0.398         0.313
+ VDLFL1Z        0.489         0.451         0.469         0.478         0.376
+ VDLFL2         0.465         0.429         0.446         0.455         0.358
+ VDLFL3         0.415         0.383         0.398         0.406         0.319
+ VDLFL4         0.352         0.325         0.338         0.344         0.271
+ VDLFL5         0.308         0.284         0.296         0.302         0.237
+ VDLFL6         0.328         0.303         0.315         0.321         0.253
+ VDVIS1Z        0.362         0.334         0.347         0.354         0.278
+ VDORI1Z        0.497         0.458         0.477         0.486         0.382
+
+
+           Model Estimated Correlations/Residual Correlations
+              VDMRE1Z       VDMRE2Z       VDEXF1Z       VDEXF2Z       VDEXF7Z
+              ________      ________      ________      ________      ________
+ VDMRE1Z        1.000
+ VDMRE2Z        0.400         1.000
+ VDEXF1Z        0.387         0.359         1.000
+ VDEXF2Z        0.348         0.324         0.553         1.000
+ VDEXF7Z        0.307         0.286         0.488         0.440         1.000
+ VDASP1Z        0.437         0.406         0.694         0.625         0.552
+ VDASP2Z        0.390         0.362         0.619         0.558         0.492
+ VDASP3         0.304         0.282         0.482         0.435         0.384
+ VDASP4Z        0.348         0.324         0.553         0.498         0.440
+ VDASP5Z        0.346         0.322         0.549         0.495         0.437
+ VDLFL1Z        0.415         0.386         0.492         0.443         0.391
+ VDLFL2         0.395         0.367         0.468         0.422         0.372
+ VDLFL3         0.353         0.328         0.418         0.376         0.332
+ VDLFL4         0.299         0.278         0.354         0.319         0.282
+ VDLFL5         0.262         0.244         0.310         0.280         0.247
+ VDLFL6         0.279         0.259         0.330         0.298         0.263
+ VDVIS1Z        0.307         0.286         0.449         0.405         0.357
+ VDORI1Z        0.422         0.393         0.414         0.373         0.329
+
+
+           Model Estimated Correlations/Residual Correlations
+              VDASP1Z       VDASP2Z       VDASP3        VDASP4Z       VDASP5Z
+              ________      ________      ________      ________      ________
+ VDASP1Z        1.000
+ VDASP2Z        0.700         1.000
+ VDASP3         0.545         0.486
+ VDASP4Z        0.625         0.557         0.434         1.000
+ VDASP5Z        0.621         0.554         0.432         0.495         1.000
+ VDLFL1Z        0.556         0.496         0.387         0.443         0.440
+ VDLFL2         0.529         0.472         0.368         0.422         0.419
+ VDLFL3         0.472         0.421         0.328         0.376         0.374
+ VDLFL4         0.400         0.357         0.278         0.319         0.317
+ VDLFL5         0.351         0.313         0.244         0.279         0.278
+ VDLFL6         0.373         0.333         0.260         0.297         0.296
+ VDVIS1Z        0.508         0.453         0.353         0.405         0.402
+ VDORI1Z        0.468         0.417         0.325         0.372         0.370
+
+
+           Model Estimated Correlations/Residual Correlations
+              VDLFL1Z       VDLFL2        VDLFL3        VDLFL4        VDLFL5
+              ________      ________      ________      ________      ________
+ VDLFL1Z        1.000
+ VDLFL2         0.569
+ VDLFL3         0.508         0.483
+ VDLFL4         0.431         0.410         0.366
+ VDLFL5         0.377         0.359         0.320         0.272
+ VDLFL6         0.402         0.382         0.341         0.289         0.253
+ VDVIS1Z        0.428         0.407         0.363         0.308         0.270
+ VDORI1Z        0.407         0.388         0.346         0.293         0.257
+
+
+           Model Estimated Correlations/Residual Correlations
+              VDLFL6        VDVIS1Z       VDORI1Z
+              ________      ________      ________
+ VDVIS1Z        0.287         1.000
+ VDORI1Z        0.274         0.320         1.000
+
+
+           Residuals for Covariances/Correlations/Residual Correlations
+              VDMDE1Z       VDMDE2Z       VDMDE3        VDMDE4Z       VDMDE5Z
+              ________      ________      ________      ________      ________
+ VDMDE1Z        0.000
+ VDMDE2Z        0.002         0.000
+ VDMDE3         0.016         0.018
+ VDMDE4Z       -0.002        -0.005        -0.012         0.000
+ VDMDE5Z        0.003         0.007         0.012        -0.004         0.000
+ VDMRE1Z        0.000        -0.001        -0.001        -0.001         0.000
+ VDMRE2Z        0.000         0.000        -0.004        -0.004         0.001
+ VDEXF1Z       -0.001         0.001        -0.010         0.006         0.001
+ VDEXF2Z       -0.002         0.000        -0.002         0.000         0.000
+ VDEXF7Z       -0.002         0.000        -0.007         0.001         0.000
+ VDASP1Z        0.002         0.001         0.005         0.002         0.000
+ VDASP2Z        0.000         0.000        -0.002         0.001        -0.001
+ VDASP3         0.014         0.009         0.001         0.002        -0.007
+ VDASP4Z       -0.001         0.000         0.000         0.000        -0.001
+ VDASP5Z        0.001        -0.001         0.007         0.001        -0.001
+ VDLFL1Z        0.001         0.001         0.005         0.000         0.001
+ VDLFL2        -0.006         0.001         0.064         0.001         0.006
+ VDLFL3         0.019         0.028        -0.003         0.030        -0.004
+ VDLFL4         0.000         0.003        -0.119         0.002        -0.004
+ VDLFL5        -0.009         0.001        -0.045        -0.008        -0.020
+ VDLFL6        -0.006         0.002         0.013         0.006        -0.004
+ VDVIS1Z       -0.002        -0.002        -0.013         0.015        -0.002
+ VDORI1Z       -0.001        -0.003        -0.008        -0.003        -0.002
+
+
+           Residuals for Covariances/Correlations/Residual Correlations
+              VDMRE1Z       VDMRE2Z       VDEXF1Z       VDEXF2Z       VDEXF7Z
+              ________      ________      ________      ________      ________
+ VDMRE1Z        0.000
+ VDMRE2Z        0.001         0.000
+ VDEXF1Z        0.000         0.001         0.000
+ VDEXF2Z       -0.001         0.000        -0.002         0.000
+ VDEXF7Z       -0.002         0.000         0.004         0.002         0.000
+ VDASP1Z        0.000         0.000        -0.002         0.002        -0.001
+ VDASP2Z        0.000         0.000        -0.001         0.002        -0.001
+ VDASP3        -0.002         0.001        -0.006        -0.012         0.001
+ VDASP4Z       -0.001         0.000        -0.001         0.001         0.001
+ VDASP5Z        0.000         0.000        -0.002         0.001        -0.003
+ VDLFL1Z        0.000         0.000         0.000         0.000         0.000
+ VDLFL2        -0.004         0.010         0.001        -0.001        -0.008
+ VDLFL3        -0.014         0.005         0.001         0.010        -0.011
+ VDLFL4        -0.006         0.006         0.001        -0.010        -0.012
+ VDLFL5        -0.009         0.000         0.009        -0.017        -0.009
+ VDLFL6        -0.002         0.000         0.005        -0.012        -0.006
+ VDVIS1Z       -0.001        -0.001         0.005        -0.002         0.001
+ VDORI1Z        0.002         0.000        -0.001        -0.002         0.000
+
+
+           Residuals for Covariances/Correlations/Residual Correlations
+              VDASP1Z       VDASP2Z       VDASP3        VDASP4Z       VDASP5Z
+              ________      ________      ________      ________      ________
+ VDASP1Z        0.000
+ VDASP2Z        0.001         0.000
+ VDASP3        -0.007        -0.006
+ VDASP4Z        0.000         0.000         0.004         0.000
+ VDASP5Z        0.002         0.001         0.000         0.000         0.000
+ VDLFL1Z        0.000         0.000         0.005         0.001         0.000
+ VDLFL2        -0.001        -0.005         0.037         0.005        -0.002
+ VDLFL3        -0.013        -0.008         0.079        -0.014         0.002
+ VDLFL4        -0.006        -0.007         0.140         0.010         0.004
+ VDLFL5        -0.006         0.000        -0.006         0.011         0.007
+ VDLFL6        -0.009        -0.004         0.063        -0.001        -0.001
+ VDVIS1Z       -0.001         0.000         0.003        -0.001        -0.001
+ VDORI1Z        0.000         0.000        -0.001         0.001         0.000
+
+
+           Residuals for Covariances/Correlations/Residual Correlations
+              VDLFL1Z       VDLFL2        VDLFL3        VDLFL4        VDLFL5
+              ________      ________      ________      ________      ________
+ VDLFL1Z        0.000
+ VDLFL2         0.000
+ VDLFL3        -0.001        -0.031
+ VDLFL4        -0.007        -0.025         0.151
+ VDLFL5        -0.016         0.050         0.137         0.175
+ VDLFL6        -0.003         0.010         0.199         0.048         0.113
+ VDVIS1Z       -0.002         0.002        -0.002         0.007         0.014
+ VDORI1Z        0.000        -0.001        -0.006        -0.001         0.002
+
+
+           Residuals for Covariances/Correlations/Residual Correlations
+              VDLFL6        VDVIS1Z       VDORI1Z
+              ________      ________      ________
+ VDVIS1Z        0.009         0.000
+ VDORI1Z        0.007         0.000         0.000
+
+
+           Residuals for Correlations/Residual Correlations
+              VDMDE1Z       VDMDE2Z       VDMDE3        VDMDE4Z       VDMDE5Z
+              ________      ________      ________      ________      ________
+ VDMDE1Z        0.000
+ VDMDE2Z        0.039         0.000
+ VDMDE3         0.060         0.083
+ VDMDE4Z       -0.028        -0.073        -0.040         0.000
+ VDMDE5Z        0.045         0.118         0.043        -0.046         0.000
+ VDMRE1Z        0.000        -0.022        -0.012        -0.021         0.012
+ VDMRE2Z       -0.005         0.000        -0.021        -0.070         0.026
+ VDEXF1Z       -0.015         0.025        -0.046         0.096         0.017
+ VDEXF2Z       -0.030         0.002        -0.009         0.006        -0.009
+ VDEXF7Z       -0.037         0.013        -0.039         0.018        -0.008
+ VDASP1Z        0.036         0.018         0.028         0.040        -0.006
+ VDASP2Z       -0.010        -0.013        -0.016         0.037        -0.019
+ VDASP3         0.054         0.043         0.001         0.006        -0.025
+ VDASP4Z       -0.019        -0.002         0.000         0.001        -0.024
+ VDASP5Z        0.025        -0.017         0.051         0.021        -0.022
+ VDLFL1Z        0.021         0.026         0.032         0.011         0.021
+ VDLFL2        -0.023         0.004         0.064         0.004         0.022
+ VDLFL3         0.070         0.129        -0.003         0.100        -0.016
+ VDLFL4         0.000         0.013        -0.119         0.007        -0.013
+ VDLFL5        -0.035         0.006        -0.045        -0.026        -0.073
+ VDLFL6        -0.022         0.007         0.013         0.021        -0.015
+ VDVIS1Z       -0.029        -0.037        -0.062         0.241        -0.030
+ VDORI1Z       -0.036        -0.097        -0.058        -0.076        -0.049
+
+
+           Residuals for Correlations/Residual Correlations
+              VDMRE1Z       VDMRE2Z       VDEXF1Z       VDEXF2Z       VDEXF7Z
+              ________      ________      ________      ________      ________
+ VDMRE1Z        0.000
+ VDMRE2Z        0.047         0.000
+ VDEXF1Z        0.005         0.021         0.000
+ VDEXF2Z       -0.059        -0.003        -0.041         0.000
+ VDEXF7Z       -0.073        -0.003         0.113         0.062         0.000
+ VDASP1Z       -0.004         0.004        -0.061         0.049        -0.017
+ VDASP2Z       -0.012         0.002        -0.041         0.096        -0.031
+ VDASP3        -0.015         0.007        -0.028        -0.060         0.007
+ VDASP4Z       -0.032         0.003        -0.040         0.020         0.053
+ VDASP5Z        0.026        -0.014        -0.066         0.018        -0.121
+ VDLFL1Z       -0.019        -0.011         0.013         0.003         0.015
+ VDLFL2        -0.032         0.056         0.006        -0.003        -0.044
+ VDLFL3        -0.110         0.026         0.006         0.052        -0.060
+ VDLFL4        -0.045         0.034         0.003        -0.048        -0.065
+ VDLFL5        -0.075        -0.001         0.039        -0.087        -0.047
+ VDLFL6        -0.017         0.001         0.022        -0.062        -0.036
+ VDVIS1Z       -0.021        -0.023         0.109        -0.036         0.039
+ VDORI1Z        0.138        -0.015        -0.018        -0.069         0.002
+
+
+           Residuals for Correlations/Residual Correlations
+              VDASP1Z       VDASP2Z       VDASP3        VDASP4Z       VDASP5Z
+              ________      ________      ________      ________      ________
+ VDASP1Z        0.000
+ VDASP2Z        0.039         0.000
+ VDASP3        -0.040        -0.056
+ VDASP4Z       -0.007        -0.013         0.030         0.000
+ VDASP5Z        0.069         0.088        -0.003        -0.025         0.000
+ VDLFL1Z       -0.013        -0.008         0.031         0.035        -0.006
+ VDLFL2        -0.008        -0.043         0.037         0.034        -0.015
+ VDLFL3        -0.073        -0.072         0.079        -0.101         0.012
+ VDLFL4        -0.031        -0.064         0.140         0.074         0.029
+ VDLFL5        -0.033         0.000        -0.006         0.077         0.050
+ VDLFL6        -0.048        -0.034         0.063        -0.007        -0.005
+ VDVIS1Z       -0.026        -0.010         0.013        -0.027        -0.044
+ VDORI1Z       -0.016         0.015        -0.010         0.028         0.024
+
+
+           Residuals for Correlations/Residual Correlations
+              VDLFL1Z       VDLFL2        VDLFL3        VDLFL4        VDLFL5
+              ________      ________      ________      ________      ________
+ VDLFL1Z        0.000
+ VDLFL2         0.002
+ VDLFL3        -0.007        -0.031
+ VDLFL4        -0.047        -0.025         0.151
+ VDLFL5        -0.103         0.050         0.137         0.175
+ VDLFL6        -0.018         0.010         0.199         0.048         0.113
+ VDVIS1Z       -0.048         0.011        -0.011         0.032         0.068
+ VDORI1Z       -0.009        -0.006        -0.045        -0.007         0.012
+
+
+           Residuals for Correlations/Residual Correlations
+              VDLFL6        VDVIS1Z       VDORI1Z
+              ________      ________      ________
+ VDVIS1Z        0.041         0.000
+ VDORI1Z        0.049         0.000         0.000
+
+
+     UNIVARIATE PROPORTIONS FOR CATEGORICAL VARIABLES
+
+     Variable          Observed      Estimated      Residual (Obs.-Est.)    Stand. Residual
+     VDMDE3
+       Category  1       0.092          0.092                  0.000                0.000
+       Category  2       0.908          0.908                  0.000                0.000
+     VDASP3
+       Category  1       0.016          0.016                  0.000                0.000
+       Category  2       0.027          0.027                  0.000                0.000
+       Category  3       0.050          0.050                  0.000                0.000
+       Category  4       0.106          0.106                  0.000                0.000
+       Category  5       0.047          0.047                  0.000                0.000
+       Category  6       0.753          0.753                  0.000                0.000
+     VDLFL2
+       Category  1       0.086          0.086                  0.000                0.000
+       Category  2       0.914          0.914                  0.000                0.000
+     VDLFL3
+       Category  1       0.012          0.012                  0.000                0.000
+       Category  2       0.988          0.988                  0.000                0.000
+     VDLFL4
+       Category  1       0.066          0.066                  0.000                0.000
+       Category  2       0.934          0.934                  0.000                0.000
+     VDLFL5
+       Category  1       0.039          0.039                  0.000                0.000
+       Category  2       0.961          0.961                  0.000                0.000
+     VDLFL6
+       Category  1       0.036          0.036                  0.000                0.000
+       Category  2       0.209          0.209                  0.000                0.000
+       Category  3       0.755          0.755                  0.000                0.000
+
+
+     BIVARIATE PROPORTIONS FOR CATEGORICAL VARIABLES
+
+     Variable       Variable          Observed     Estimated    Residual (Obs.-Est.)  Stand. Residual
+     VDMDE3         VDASP3
+       Category 1     Category 1        0.004       0.005            -0.001           -0.721
+       Category 1     Category 2        0.007       0.006             0.000            0.168
+       Category 1     Category 3        0.011       0.010             0.001            0.667
+       Category 1     Category 4        0.013       0.016            -0.004           -1.556
+       Category 1     Category 5        0.006       0.006             0.000           -0.232
+       Category 1     Category 6        0.047       0.049            -0.002           -0.512
+       Category 2     Category 1        0.011       0.011             0.000            0.099
+       Category 2     Category 2        0.020       0.021            -0.001           -0.443
+       Category 2     Category 3        0.038       0.040            -0.003           -0.767
+       Category 2     Category 4        0.094       0.090             0.004            0.730
+       Category 2     Category 5        0.041       0.041             0.000           -0.082
+       Category 2     Category 6        0.709       0.704             0.006            0.677
+     VDMDE3         VDLFL2
+       Category 1     Category 1        0.027       0.025             0.002            0.774
+       Category 1     Category 2        0.064       0.068            -0.004           -0.857
+       Category 2     Category 1        0.056       0.061            -0.006           -1.333
+       Category 2     Category 2        0.853       0.846             0.007            1.150
+     VDMDE3         VDLFL3
+       Category 1     Category 1        0.004       0.005            -0.001           -0.738
+       Category 1     Category 2        0.088       0.088             0.000            0.074
+       Category 2     Category 1        0.006       0.007            -0.001           -0.914
+       Category 2     Category 2        0.902       0.900             0.002            0.357
+     VDMDE3         VDLFL4
+       Category 1     Category 1        0.011       0.016            -0.005           -2.192
+       Category 1     Category 2        0.079       0.077             0.003            0.592
+       Category 2     Category 1        0.051       0.050             0.002            0.391
+       Category 2     Category 2        0.858       0.858             0.001            0.089
+     VDMDE3         VDLFL5
+       Category 1     Category 1        0.008       0.009            -0.002           -0.947
+       Category 1     Category 2        0.084       0.083             0.001            0.255
+       Category 2     Category 1        0.029       0.030            -0.001           -0.269
+       Category 2     Category 2        0.879       0.878             0.001            0.201
+     VDMDE3         VDLFL6
+       Category 1     Category 1        0.009       0.009             0.000            0.163
+       Category 1     Category 2        0.031       0.032            -0.001           -0.375
+       Category 1     Category 3        0.051       0.051             0.000            0.101
+       Category 2     Category 1        0.023       0.027            -0.004           -1.268
+       Category 2     Category 2        0.175       0.177            -0.002           -0.324
+       Category 2     Category 3        0.710       0.704             0.006            0.784
+     VDASP3         VDLFL2
+       Category 1     Category 1        0.006       0.005             0.000            0.389
+       Category 1     Category 2        0.011       0.011             0.000           -0.257
+       Category 2     Category 1        0.008       0.006             0.001            0.767
+       Category 2     Category 2        0.020       0.021            -0.001           -0.544
+       Category 3     Category 1        0.009       0.010            -0.001           -0.593
+       Category 3     Category 2        0.041       0.041             0.001            0.216
+       Category 4     Category 1        0.009       0.016            -0.006           -2.824
+       Category 4     Category 2        0.097       0.091             0.006            1.241
+       Category 5     Category 1        0.005       0.006            -0.001           -0.520
+       Category 5     Category 2        0.042       0.041             0.000            0.121
+       Category 6     Category 1        0.035       0.043            -0.008           -2.347
+       Category 6     Category 2        0.718       0.709             0.009            1.142
+     VDASP3         VDLFL3
+       Category 1     Category 1        0.001       0.001             0.000           -0.206
+       Category 1     Category 2        0.015       0.015             0.000            0.064
+       Category 2     Category 1        0.001       0.001             0.000            0.196
+       Category 2     Category 2        0.026       0.026             0.000           -0.140
+       Category 3     Category 1        0.002       0.002             0.001            0.957
+       Category 3     Category 2        0.048       0.049            -0.001           -0.158
+       Category 4     Category 1        0.001       0.002            -0.002           -1.970
+       Category 4     Category 2        0.106       0.104             0.001            0.276
+       Category 5     Category 1        0.001       0.001             0.000            0.940
+       Category 5     Category 2        0.046       0.046             0.000           -0.110
+       Category 6     Category 1        0.003       0.005            -0.002           -1.561
+       Category 6     Category 2        0.750       0.747             0.002            0.298
+     VDASP3         VDLFL4
+       Category 1     Category 1        0.005       0.003             0.002            2.126
+       Category 1     Category 2        0.009       0.013            -0.004           -2.201
+       Category 2     Category 1        0.006       0.004             0.002            1.332
+       Category 2     Category 2        0.021       0.023            -0.002           -0.892
+       Category 3     Category 1        0.005       0.006            -0.001           -0.680
+       Category 3     Category 2        0.043       0.044             0.000           -0.049
+       Category 4     Category 1        0.009       0.011            -0.002           -1.106
+       Category 4     Category 2        0.098       0.095             0.002            0.460
+       Category 5     Category 1        0.003       0.004            -0.001           -1.133
+       Category 5     Category 2        0.043       0.043             0.000            0.120
+       Category 6     Category 1        0.027       0.037            -0.010           -3.034
+       Category 6     Category 2        0.731       0.716             0.015            1.865
+     VDASP3         VDLFL5
+       Category 1     Category 1        0.003       0.002             0.001            0.778
+       Category 1     Category 2        0.014       0.014            -0.001           -0.415
+       Category 2     Category 1        0.003       0.002             0.001            0.797
+       Category 2     Category 2        0.024       0.025            -0.001           -0.228
+       Category 3     Category 1        0.001       0.004            -0.002           -2.277
+       Category 3     Category 2        0.049       0.046             0.002            0.609
+       Category 4     Category 1        0.002       0.006            -0.005           -3.187
+       Category 4     Category 2        0.105       0.100             0.005            0.899
+       Category 5     Category 1        0.002       0.002            -0.001           -0.986
+       Category 5     Category 2        0.046       0.045             0.001            0.268
+       Category 6     Category 1        0.017       0.022            -0.005           -1.849
+       Category 6     Category 2        0.735       0.731             0.005            0.610
+     VDASP3         VDLFL6
+       Category 1     Category 1        0.002       0.002             0.000           -0.455
+       Category 1     Category 2        0.007       0.006             0.001            0.940
+       Category 1     Category 3        0.007       0.008            -0.001           -0.750
+       Category 2     Category 1        0.004       0.002             0.002            2.283
+       Category 2     Category 2        0.010       0.009             0.001            0.622
+       Category 2     Category 3        0.013       0.016            -0.003           -1.347
+       Category 3     Category 1        0.004       0.004             0.000            0.148
+       Category 3     Category 2        0.017       0.015             0.001            0.667
+       Category 3     Category 3        0.030       0.031            -0.002           -0.496
+       Category 4     Category 1        0.004       0.006            -0.002           -1.471
+       Category 4     Category 2        0.028       0.029            -0.002           -0.545
+       Category 4     Category 3        0.075       0.071             0.004            0.843
+       Category 5     Category 1        0.002       0.002            -0.001           -0.859
+       Category 5     Category 2        0.009       0.012            -0.003           -1.520
+       Category 5     Category 3        0.036       0.033             0.003            1.088
+       Category 6     Category 1        0.014       0.020            -0.006           -2.518
+       Category 6     Category 2        0.130       0.137            -0.007           -1.132
+       Category 6     Category 3        0.609       0.596             0.013            1.536
+     VDLFL2         VDLFL3
+       Category 1     Category 1        0.005       0.005            -0.001           -0.712
+       Category 1     Category 2        0.081       0.081             0.000            0.087
+       Category 2     Category 1        0.006       0.007             0.000           -0.191
+       Category 2     Category 2        0.908       0.907             0.001            0.152
+     VDLFL2         VDLFL4
+       Category 1     Category 1        0.015       0.018            -0.003           -1.235
+       Category 1     Category 2        0.062       0.068            -0.007           -1.508
+       Category 2     Category 1        0.050       0.048             0.001            0.394
+       Category 2     Category 2        0.874       0.866             0.008            1.347
+     VDLFL2         VDLFL5
+       Category 1     Category 1        0.011       0.010             0.001            0.474
+       Category 1     Category 2        0.073       0.076            -0.002           -0.516
+       Category 2     Category 1        0.026       0.028            -0.002           -0.762
+       Category 2     Category 2        0.889       0.885             0.004            0.676
+     VDLFL2         VDLFL6
+       Category 1     Category 1        0.011       0.010             0.000            0.082
+       Category 1     Category 2        0.032       0.033            -0.001           -0.253
+       Category 1     Category 3        0.043       0.043             0.000            0.048
+       Category 2     Category 1        0.023       0.026            -0.003           -1.206
+       Category 2     Category 2        0.177       0.176             0.001            0.187
+       Category 2     Category 3        0.715       0.712             0.003            0.325
+     VDLFL3         VDLFL4
+       Category 1     Category 1        0.004       0.003             0.001            1.007
+       Category 1     Category 2        0.006       0.009            -0.003           -1.710
+       Category 2     Category 1        0.061       0.063            -0.002           -0.433
+       Category 2     Category 2        0.929       0.926             0.004            0.783
+     VDLFL3         VDLFL5
+       Category 1     Category 1        0.003       0.002             0.001            0.966
+       Category 1     Category 2        0.008       0.010            -0.002           -1.262
+       Category 2     Category 1        0.035       0.037            -0.002           -0.578
+       Category 2     Category 2        0.955       0.951             0.003            0.890
+     VDLFL3         VDLFL6
+       Category 1     Category 1        0.004       0.002             0.002            2.035
+       Category 1     Category 2        0.005       0.005             0.000            0.113
+       Category 1     Category 3        0.002       0.005            -0.003           -2.127
+       Category 2     Category 1        0.030       0.034            -0.004           -1.234
+       Category 2     Category 2        0.204       0.204             0.000            0.061
+       Category 2     Category 3        0.754       0.750             0.004            0.578
+     VDLFL4         VDLFL5
+       Category 1     Category 1        0.009       0.007             0.002            1.642
+       Category 1     Category 2        0.056       0.059            -0.003           -0.749
+       Category 2     Category 1        0.023       0.032            -0.009           -2.877
+       Category 2     Category 2        0.912       0.902             0.010            1.854
+     VDLFL4         VDLFL6
+       Category 1     Category 1        0.007       0.007             0.000            0.146
+       Category 1     Category 2        0.024       0.023             0.001            0.375
+       Category 1     Category 3        0.035       0.036            -0.001           -0.425
+       Category 2     Category 1        0.024       0.030            -0.005           -1.835
+       Category 2     Category 2        0.181       0.186            -0.005           -0.778
+       Category 2     Category 3        0.729       0.718             0.011            1.391
+     VDLFL5         VDLFL6
+       Category 1     Category 1        0.007       0.004             0.003            2.845
+       Category 1     Category 2        0.013       0.013            -0.001           -0.322
+       Category 1     Category 3        0.019       0.022            -0.003           -1.170
+       Category 2     Category 1        0.028       0.032            -0.005           -1.505
+       Category 2     Category 2        0.196       0.196             0.000            0.041
+       Category 2     Category 3        0.738       0.733             0.005            0.635
+
+
+MODEL MODIFICATION INDICES
+
+NOTE:  Modification indices for direct effects of observed dependent variables
+regressed on covariates and residual covariances among observed dependent
+variables may not be included.  To include these, request MODINDICES (ALL).
+
+Minimum M.I. value for printing the modification index     0.000
+
+                                   M.I.     E.P.C.  Std E.P.C.  StdYX E.P.C.
+
+BY Statements
+
+MDE      BY VDEXF1Z               14.708     0.106      0.022        0.098
+MDE      BY VDEXF2Z               28.419    -0.144     -0.029       -0.147
+MDE      BY VDEXF7Z               13.932    -0.077     -0.016       -0.088
+MDE      BY VDASP1Z                1.701     0.031      0.006        0.036
+MDE      BY VDASP2Z                2.943    -0.022     -0.004       -0.042
+MDE      BY VDASP3                12.165     0.459      0.094        0.094
+MDE      BY VDASP4Z                1.432    -0.019     -0.004       -0.027
+MDE      BY VDASP5Z                8.980     0.049      0.010        0.071
+MDE      BY VDLFL1Z               10.238     0.124      0.025        0.166
+MDE      BY VDLFL2                 0.025     0.044      0.009        0.009
+MDE      BY VDLFL3                 2.241    -0.674     -0.138       -0.138
+MDE      BY VDLFL4                 2.253    -0.446     -0.091       -0.091
+MDE      BY VDLFL5                13.185    -1.212     -0.247       -0.247
+MDE      BY VDLFL6                 0.005     0.015      0.003        0.003
+EXF      BY VDMDE1Z                2.215    -0.065     -0.011       -0.043
+EXF      BY VDMDE2Z                0.794     0.031      0.005        0.025
+EXF      BY VDMDE3                 0.817    -0.171     -0.030       -0.030
+EXF      BY VDMDE4Z              146.970     0.563      0.098        0.331
+EXF      BY VDMDE5Z               15.156    -0.161     -0.028       -0.102
+EXF      BY VDMRE1Z               52.484    -0.113     -0.020       -0.158
+EXF      BY VDMRE2Z                0.154     0.010      0.002        0.010
+EXF      BY VDLFL1Z                8.638     0.134      0.023        0.152
+EXF      BY VDLFL2                 0.492    -0.227     -0.039       -0.039
+EXF      BY VDLFL3                 7.983    -1.610     -0.279       -0.279
+EXF      BY VDLFL4                 0.378     0.208      0.036        0.036
+EXF      BY VDLFL5                 2.896     0.662      0.115        0.115
+EXF      BY VDLFL6                 8.402    -0.737     -0.128       -0.128
+LFL      BY VDMDE1Z                2.314    -0.160     -0.019       -0.071
+LFL      BY VDMDE2Z                4.202     0.176      0.021        0.096
+LFL      BY VDMDE3                 0.152     0.170      0.020        0.020
+LFL      BY VDMDE4Z              160.632     1.414      0.167        0.567
+LFL      BY VDMDE5Z                8.980    -0.302     -0.036       -0.130
+LFL      BY VDMRE1Z              116.563    -0.403     -0.048       -0.384
+LFL      BY VDMRE2Z                0.975     0.063      0.007        0.041
+LFL      BY VDEXF1Z               29.554     0.402      0.047        0.215
+LFL      BY VDEXF2Z               30.938    -0.412     -0.049       -0.243
+LFL      BY VDEXF7Z               10.458    -0.183     -0.022       -0.120
+LFL      BY VDASP1Z                1.755    -0.086     -0.010       -0.058
+LFL      BY VDASP2Z               16.780    -0.141     -0.017       -0.158
+LFL      BY VDASP3                35.175     2.120      0.250        0.250
+LFL      BY VDASP4Z                2.401     0.066      0.008        0.055
+LFL      BY VDASP5Z                2.627     0.074      0.009        0.061
+CERADWL  BY VDMDE2Z                2.015    -0.144     -0.009       -0.040
+CERADWL  BY VDMDE3                 0.001    -0.011     -0.001       -0.001
+CERADWL  BY VDMDE4Z                7.252    -0.360     -0.022       -0.074
+CERADWL  BY VDMDE5Z                3.511     0.236      0.014        0.052
+CERADWL  BY VDMRE2Z               15.516     0.335      0.020        0.110
+CERADWL  BY VDEXF1Z                0.014     0.011      0.001        0.003
+CERADWL  BY VDEXF2Z               19.110    -0.468     -0.028       -0.141
+CERADWL  BY VDEXF7Z               36.766    -0.512     -0.031       -0.171
+CERADWL  BY VDASP1Z                0.198     0.036      0.002        0.012
+CERADWL  BY VDASP2Z                1.913    -0.058     -0.004       -0.033
+CERADWL  BY VDASP3                 0.087     0.146      0.009        0.009
+CERADWL  BY VDASP4Z               18.539    -0.200     -0.012       -0.086
+CERADWL  BY VDASP5Z                8.890     0.170      0.010        0.072
+CERADWL  BY VDLFL1Z                1.943    -0.091     -0.005       -0.036
+CERADWL  BY VDLFL2                 6.396    -1.462     -0.088       -0.088
+CERADWL  BY VDLFL3                12.973    -3.592     -0.216       -0.216
+CERADWL  BY VDLFL4                 4.821    -1.534     -0.092       -0.092
+CERADWL  BY VDLFL5                14.375    -2.932     -0.177       -0.177
+CERADWL  BY VDLFL6                 2.805    -0.873     -0.053       -0.053
+LM       BY VDMDE1Z                1.034     0.117      0.009        0.035
+LM       BY VDMDE3                 2.962     0.886      0.070        0.070
+LM       BY VDMDE4Z               46.918    -0.842     -0.067       -0.226
+LM       BY VDMDE5Z               27.207     0.615      0.049        0.177
+LM       BY VDMRE1Z                3.669     0.078      0.006        0.050
+LM       BY VDEXF1Z                4.701     0.175      0.014        0.063
+LM       BY VDEXF2Z                0.016    -0.010     -0.001       -0.004
+LM       BY VDEXF7Z                0.155     0.025      0.002        0.011
+LM       BY VDASP1Z                0.809     0.062      0.005        0.028
+LM       BY VDASP2Z                0.165    -0.015     -0.001       -0.011
+LM       BY VDASP3                 3.073     0.728      0.058        0.058
+LM       BY VDASP4Z                0.010     0.005      0.000        0.003
+LM       BY VDASP5Z                2.584    -0.076     -0.006       -0.043
+LM       BY VDLFL1Z                0.160     0.023      0.002        0.012
+LM       BY VDLFL2                 5.627     1.286      0.102        0.102
+LM       BY VDLFL3                 3.570     1.893      0.150        0.150
+LM       BY VDLFL4                 2.151     0.889      0.070        0.070
+LM       BY VDLFL5                 0.007     0.057      0.005        0.005
+LM       BY VDLFL6                 0.099     0.130      0.010        0.010
+
+ON/BY Statements
+
+VDVIS1Z  ON CERADWL  /
+CERADWL  BY VDVIS1Z                8.086    -0.299     -0.018       -0.085
+VDVIS1Z  ON LM       /
+LM       BY VDVIS1Z               10.045    -0.266     -0.021       -0.100
+VDORI1Z  ON CERADWL  /
+CERADWL  BY VDORI1Z              312.646     0.987      0.059        0.441
+VDORI1Z  ON LM       /
+LM       BY VDORI1Z               28.322    -0.266     -0.021       -0.156
+MDE      ON CERADWL  /
+CERADWL  BY MDE                    0.187     0.041      0.012        0.012
+MDE      ON LM       /
+LM       BY MDE                    1.192     0.083      0.032        0.032
+EXF      ON CERADWL  /
+CERADWL  BY EXF                   33.825    -0.307     -0.107       -0.107
+EXF      ON LM       /
+LM       BY EXF                    2.036     0.062      0.028        0.028
+LFL      ON CERADWL  /
+CERADWL  BY LFL                   37.694    -0.320     -0.163       -0.163
+LFL      ON LM       /
+LM       BY LFL                    6.990     0.117      0.078        0.078
+CERADWL  ON EXF      /
+EXF      BY CERADWL               69.155    -0.139     -0.400       -0.400
+CERADWL  ON LFL      /
+LFL      BY CERADWL              147.220    -0.484     -0.951       -0.951
+CERADWL  ON LM       /
+LM       BY CERADWL                5.249     0.094      0.123        0.123
+LM       ON EXF      /
+EXF      BY LM                     0.905     0.023      0.049        0.049
+LM       ON LFL      /
+LFL      BY LM                     5.116     0.130      0.193        0.193
+LM       ON CERADWL  /
+CERADWL  BY LM                     5.249     0.162      0.123        0.123
+
+ON Statements
+
+CERADWL  ON VDVIS1Z               44.104    -0.074     -1.222       -0.259
+CERADWL  ON VDORI1Z              306.837     0.343      5.692        0.768
+LM       ON VDVIS1Z                4.395    -0.032     -0.407       -0.086
+LM       ON VDORI1Z               29.219    -0.164     -2.068       -0.279
+
+WITH Statements
+
+VDMDE2Z  WITH VDMDE1Z              4.634     0.003      0.003        0.128
+VDMDE3   WITH VDMDE1Z             13.147     0.019      0.019        0.184
+VDMDE3   WITH VDMDE2Z             16.169     0.020      0.020        0.233
+VDMDE4Z  WITH VDMDE1Z              2.807    -0.003     -0.003       -0.086
+VDMDE4Z  WITH VDMDE2Z             19.577    -0.006     -0.006       -0.221
+VDMDE4Z  WITH VDMDE3               5.010    -0.014     -0.014       -0.107
+VDMDE5Z  WITH VDMDE1Z              6.619     0.004      0.004        0.107
+VDMDE5Z  WITH VDMDE2Z             39.780     0.008      0.008        0.272
+VDMDE5Z  WITH VDMDE3               3.503     0.013      0.013        0.086
+VDMDE5Z  WITH VDMDE4Z              8.326    -0.004     -0.004       -0.101
+VDMRE1Z  WITH VDMDE2Z              4.312    -0.001     -0.001       -0.083
+VDMRE1Z  WITH VDMDE3               1.366    -0.002     -0.002       -0.041
+VDMRE1Z  WITH VDMDE4Z              4.715    -0.001     -0.001       -0.076
+VDMRE1Z  WITH VDMDE5Z              1.148     0.000      0.000        0.031
+VDMRE2Z  WITH VDMDE1Z              0.102     0.000      0.000       -0.014
+VDMRE2Z  WITH VDMDE3               1.151    -0.004     -0.004       -0.053
+VDMRE2Z  WITH VDMDE4Z             23.757    -0.004     -0.004       -0.190
+VDMRE2Z  WITH VDMDE5Z              2.863     0.001      0.001        0.055
+VDMRE2Z  WITH VDMRE1Z             17.051     0.001      0.001        0.149
+VDEXF1Z  WITH VDMDE1Z              1.025    -0.001     -0.001       -0.046
+VDEXF1Z  WITH VDMDE2Z              2.198     0.001      0.001        0.073
+VDEXF1Z  WITH VDMDE3               5.320    -0.011     -0.011       -0.120
+VDEXF1Z  WITH VDMDE4Z             34.377     0.007      0.007        0.259
+VDEXF1Z  WITH VDMDE5Z              1.240     0.001      0.001        0.038
+VDEXF1Z  WITH VDMRE1Z              0.217     0.000      0.000        0.016
+VDEXF1Z  WITH VDMRE2Z              2.403     0.001      0.001        0.056
+VDEXF2Z  WITH VDMDE1Z              3.735    -0.002     -0.002       -0.081
+VDEXF2Z  WITH VDMDE2Z              0.009     0.000      0.000        0.004
+VDEXF2Z  WITH VDMDE3               0.100    -0.002     -0.002       -0.019
+VDEXF2Z  WITH VDMDE4Z              0.138     0.000      0.000        0.014
+VDEXF2Z  WITH VDMDE5Z              0.295    -0.001     -0.001       -0.017
+VDEXF2Z  WITH VDMRE1Z             14.582    -0.002     -0.002       -0.156
+VDEXF2Z  WITH VDMRE2Z              0.049     0.000      0.000       -0.008
+VDEXF2Z  WITH VDEXF1Z              7.130    -0.002     -0.002       -0.109
+VDEXF7Z  WITH VDMDE1Z              7.298    -0.002     -0.002       -0.088
+VDEXF7Z  WITH VDMDE2Z              0.729     0.001      0.001        0.030
+VDEXF7Z  WITH VDMDE3               2.556    -0.007     -0.007       -0.078
+VDEXF7Z  WITH VDMDE4Z              1.808     0.001      0.001        0.039
+VDEXF7Z  WITH VDMDE5Z              0.312     0.000      0.000       -0.014
+VDEXF7Z  WITH VDMRE1Z             27.983    -0.002     -0.002       -0.173
+VDEXF7Z  WITH VDMRE2Z              0.033     0.000      0.000       -0.005
+VDEXF7Z  WITH VDEXF1Z             84.296     0.005      0.005        0.279
+VDEXF7Z  WITH VDEXF2Z             18.792     0.003      0.003        0.128
+VDASP1Z  WITH VDMDE1Z              4.789     0.002      0.002        0.146
+VDASP1Z  WITH VDMDE2Z              1.182     0.001      0.001        0.074
+VDASP1Z  WITH VDMDE3               1.810     0.005      0.005        0.099
+VDASP1Z  WITH VDMDE4Z              5.763     0.002      0.002        0.146
+VDASP1Z  WITH VDMDE5Z              0.145     0.000      0.000       -0.018
+VDASP1Z  WITH VDMRE1Z              0.099     0.000      0.000       -0.016
+VDASP1Z  WITH VDMRE2Z              0.090     0.000      0.000        0.016
+VDASP1Z  WITH VDEXF1Z             16.692    -0.003     -0.003       -0.261
+VDASP1Z  WITH VDEXF2Z              8.110     0.002      0.002        0.176
+VDASP1Z  WITH VDEXF7Z              1.826    -0.001     -0.001       -0.058
+VDASP2Z  WITH VDMDE1Z              0.484     0.000      0.000       -0.030
+VDASP2Z  WITH VDMDE2Z              0.773     0.000      0.000       -0.041
+VDASP2Z  WITH VDMDE3               0.650    -0.002     -0.002       -0.042
+VDASP2Z  WITH VDMDE4Z              6.714     0.001      0.001        0.104
+VDASP2Z  WITH VDMDE5Z              1.590    -0.001     -0.001       -0.042
+VDASP2Z  WITH VDMRE1Z              1.399     0.000      0.000       -0.040
+VDASP2Z  WITH VDMRE2Z              0.020     0.000      0.000        0.005
+VDASP2Z  WITH VDEXF1Z              9.982    -0.001     -0.001       -0.132
+VDASP2Z  WITH VDEXF2Z             42.556     0.002      0.002        0.264
+VDASP2Z  WITH VDEXF7Z              7.586    -0.001     -0.001       -0.080
+VDASP2Z  WITH VDASP1Z              7.476     0.001      0.001        0.171
+VDASP3   WITH VDMDE1Z             11.184     0.016      0.016        0.126
+VDASP3   WITH VDMDE2Z              5.291     0.010      0.010        0.096
+VDASP3   WITH VDMDE3               0.000     0.001      0.001        0.001
+VDASP3   WITH VDMDE4Z              0.139     0.002      0.002        0.013
+VDASP3   WITH VDMDE5Z              1.953    -0.007     -0.007       -0.042
+VDASP3   WITH VDMRE1Z              1.111    -0.002     -0.002       -0.036
+VDASP3   WITH VDMRE2Z              0.180     0.001      0.001        0.014
+VDASP3   WITH VDEXF1Z              3.441    -0.007     -0.007       -0.065
+VDASP3   WITH VDEXF2Z              9.922    -0.013     -0.013       -0.118
+VDASP3   WITH VDEXF7Z              0.205     0.001      0.001        0.012
+VDASP3   WITH VDASP1Z              7.342    -0.009     -0.009       -0.133
+VDASP3   WITH VDASP2Z             14.660    -0.007     -0.007       -0.135
+VDASP4Z  WITH VDMDE1Z              1.960    -0.001     -0.001       -0.051
+VDASP4Z  WITH VDMDE2Z              0.022     0.000      0.000       -0.006
+VDASP4Z  WITH VDMDE3               0.000     0.000      0.000       -0.001
+VDASP4Z  WITH VDMDE4Z              0.005     0.000      0.000        0.002
+VDASP4Z  WITH VDMDE5Z              2.790    -0.001     -0.001       -0.046
+VDASP4Z  WITH VDMRE1Z             15.711    -0.001     -0.001       -0.096
+VDASP4Z  WITH VDMRE2Z              0.049     0.000      0.000        0.006
+VDASP4Z  WITH VDEXF1Z             10.958    -0.002     -0.002       -0.112
+VDASP4Z  WITH VDEXF2Z              2.053     0.001      0.001        0.048
+VDASP4Z  WITH VDEXF7Z             20.073     0.002      0.002        0.112
+VDASP4Z  WITH VDASP1Z              0.231     0.000      0.000       -0.025
+VDASP4Z  WITH VDASP2Z              1.290     0.000      0.000       -0.037
+VDASP4Z  WITH VDASP3               5.413     0.005      0.005        0.063
+VDASP5Z  WITH VDMDE1Z              3.268     0.001      0.001        0.066
+VDASP5Z  WITH VDMDE2Z              1.345    -0.001     -0.001       -0.043
+VDASP5Z  WITH VDMDE3               6.853     0.008      0.008        0.115
+VDASP5Z  WITH VDMDE4Z              2.326     0.001      0.001        0.051
+VDASP5Z  WITH VDMDE5Z              2.553    -0.001     -0.001       -0.043
+VDASP5Z  WITH VDMRE1Z              5.911     0.001      0.001        0.072
+VDASP5Z  WITH VDMRE2Z              1.192     0.000      0.000       -0.032
+VDASP5Z  WITH VDEXF1Z             26.594    -0.003     -0.003       -0.181
+VDASP5Z  WITH VDEXF2Z              1.469     0.001      0.001        0.041
+VDASP5Z  WITH VDEXF7Z             94.430    -0.004     -0.004       -0.253
+VDASP5Z  WITH VDASP1Z             22.132     0.002      0.002        0.251
+VDASP5Z  WITH VDASP2Z             52.091     0.002      0.002        0.248
+VDASP5Z  WITH VDASP3               0.039     0.000      0.000       -0.006
+VDASP5Z  WITH VDASP4Z              4.388    -0.001     -0.001       -0.059
+VDLFL1Z  WITH VDMDE1Z              2.091     0.001      0.001        0.066
+VDLFL1Z  WITH VDMDE2Z              2.949     0.001      0.001        0.081
+VDLFL1Z  WITH VDMDE3               4.310     0.006      0.006        0.090
+VDLFL1Z  WITH VDMDE4Z              0.559     0.001      0.001        0.031
+VDLFL1Z  WITH VDMDE5Z              1.974     0.001      0.001        0.047
+VDLFL1Z  WITH VDMRE1Z              3.621     0.000      0.000       -0.066
+VDLFL1Z  WITH VDMRE2Z              0.632     0.000      0.000       -0.029
+VDLFL1Z  WITH VDEXF1Z              0.927     0.001      0.001        0.039
+VDLFL1Z  WITH VDEXF2Z              0.039     0.000      0.000        0.008
+VDLFL1Z  WITH VDEXF7Z              1.570     0.000      0.000        0.036
+VDLFL1Z  WITH VDASP1Z              0.901     0.000      0.000       -0.054
+VDLFL1Z  WITH VDASP2Z              0.407     0.000      0.000       -0.024
+VDLFL1Z  WITH VDASP3               4.148     0.005      0.005        0.069
+VDLFL1Z  WITH VDASP4Z              8.127     0.001      0.001        0.093
+VDLFL1Z  WITH VDASP5Z              0.196     0.000      0.000       -0.015
+VDLFL2   WITH VDMDE1Z              1.593    -0.007     -0.007       -0.066
+VDLFL2   WITH VDMDE2Z              0.025     0.001      0.001        0.010
+VDLFL2   WITH VDMDE3               4.933     0.069      0.069        0.151
+VDLFL2   WITH VDMDE4Z              0.044     0.001      0.001        0.010
+VDLFL2   WITH VDMDE5Z              0.865     0.006      0.006        0.043
+VDLFL2   WITH VDMRE1Z              4.497    -0.005     -0.005       -0.095
+VDLFL2   WITH VDMRE2Z              7.426     0.011      0.011        0.135
+VDLFL2   WITH VDEXF1Z              0.120     0.002      0.002        0.017
+VDLFL2   WITH VDEXF2Z              0.016    -0.001     -0.001       -0.007
+VDLFL2   WITH VDEXF7Z              3.402    -0.008     -0.008       -0.088
+VDLFL2   WITH VDASP1Z              0.188    -0.002     -0.002       -0.031
+VDLFL2   WITH VDASP2Z              5.885    -0.005     -0.005       -0.118
+VDLFL2   WITH VDASP3               1.877     0.038      0.038        0.072
+VDLFL2   WITH VDASP4Z              5.382     0.006      0.006        0.083
+VDLFL2   WITH VDASP5Z              0.609    -0.002     -0.002       -0.035
+VDLFL2   WITH VDLFL1Z              0.010     0.000      0.000        0.006
+VDLFL3   WITH VDMDE1Z              2.426     0.020      0.020        0.166
+VDLFL3   WITH VDMDE2Z              5.827     0.029      0.029        0.295
+VDLFL3   WITH VDMDE3               0.002    -0.003     -0.003       -0.005
+VDLFL3   WITH VDMDE4Z              7.148     0.032      0.032        0.219
+VDLFL3   WITH VDMDE5Z              0.106    -0.004     -0.004       -0.027
+VDLFL3   WITH VDMRE1Z             17.057    -0.015     -0.015       -0.282
+VDLFL3   WITH VDMRE2Z              0.499     0.005      0.005        0.056
+VDLFL3   WITH VDEXF1Z              0.037     0.001      0.001        0.014
+VDLFL3   WITH VDEXF2Z              0.257     0.011      0.011        0.099
+VDLFL3   WITH VDEXF7Z              0.946    -0.011     -0.011       -0.104
+VDLFL3   WITH VDASP1Z              1.526    -0.013     -0.013       -0.218
+VDLFL3   WITH VDASP2Z              2.488    -0.008     -0.008       -0.164
+VDLFL3   WITH VDASP3               2.205     0.082      0.082        0.137
+VDLFL3   WITH VDASP4Z              5.662    -0.015     -0.015       -0.199
+VDLFL3   WITH VDASP5Z              0.056     0.002      0.002        0.024
+VDLFL3   WITH VDLFL1Z              0.068    -0.001     -0.001       -0.019
+VDLFL3   WITH VDLFL2               0.304    -0.033     -0.033       -0.065
+VDLFL4   WITH VDMDE1Z              0.000     0.000      0.000       -0.001
+VDLFL4   WITH VDMDE2Z              0.219     0.003      0.003        0.028
+VDLFL4   WITH VDMDE3               8.122    -0.122     -0.122       -0.219
+VDLFL4   WITH VDMDE4Z              0.092     0.002      0.002        0.014
+VDLFL4   WITH VDMDE5Z              0.249    -0.004     -0.004       -0.021
+VDLFL4   WITH VDMRE1Z              5.226    -0.006     -0.006       -0.101
+VDLFL4   WITH VDMRE2Z              2.032     0.006      0.006        0.064
+VDLFL4   WITH VDEXF1Z              0.013     0.001      0.001        0.005
+VDLFL4   WITH VDEXF2Z              2.691    -0.010     -0.010       -0.086
+VDLFL4   WITH VDEXF7Z              4.149    -0.012     -0.012       -0.104
+VDLFL4   WITH VDASP1Z              1.795    -0.006     -0.006       -0.090
+VDLFL4   WITH VDASP2Z              9.332    -0.008     -0.008       -0.140
+VDLFL4   WITH VDASP3              23.829     0.145      0.145        0.222
+VDLFL4   WITH VDASP4Z             13.556     0.011      0.011        0.137
+VDLFL4   WITH VDASP5Z              1.547     0.004      0.004        0.053
+VDLFL4   WITH VDLFL1Z              5.828    -0.009     -0.009       -0.114
+VDLFL4   WITH VDLFL2               0.483    -0.027     -0.027       -0.049
+VDLFL4   WITH VDLFL3               6.935     0.157      0.157        0.251
+VDLFL5   WITH VDMDE1Z              1.366    -0.010     -0.010       -0.072
+VDLFL5   WITH VDMDE2Z              0.031     0.001      0.001        0.011
+VDLFL5   WITH VDMDE3               0.948    -0.047     -0.047       -0.080
+VDLFL5   WITH VDMDE4Z              0.832    -0.008     -0.008       -0.048
+VDLFL5   WITH VDMDE5Z              5.885    -0.021     -0.021       -0.109
+VDLFL5   WITH VDMRE1Z             12.394    -0.010     -0.010       -0.163
+VDLFL5   WITH VDMRE2Z              0.001     0.000      0.000       -0.002
+VDLFL5   WITH VDEXF1Z              2.919     0.009      0.009        0.079
+VDLFL5   WITH VDEXF2Z              3.658    -0.018     -0.018       -0.144
+VDLFL5   WITH VDEXF7Z              2.109    -0.009     -0.009       -0.072
+VDLFL5   WITH VDASP1Z              1.067    -0.006     -0.006       -0.088
+VDLFL5   WITH VDASP2Z              0.000     0.000      0.000        0.001
+VDLFL5   WITH VDASP3               0.027    -0.007     -0.007       -0.009
+VDLFL5   WITH VDASP4Z              8.321     0.012      0.012        0.133
+VDLFL5   WITH VDASP5Z              3.402     0.008      0.008        0.085
+VDLFL5   WITH VDLFL1Z             17.403    -0.019     -0.019       -0.220
+VDLFL5   WITH VDLFL2               1.567     0.053      0.053        0.090
+VDLFL5   WITH VDLFL3               4.240     0.141      0.141        0.215
+VDLFL5   WITH VDLFL4              15.870     0.182      0.182        0.251
+VDLFL6   WITH VDMDE1Z              1.842    -0.006     -0.006       -0.048
+VDLFL6   WITH VDMDE2Z              0.160     0.002      0.002        0.015
+VDLFL6   WITH VDMDE3               0.218     0.013      0.013        0.023
+VDLFL6   WITH VDMDE4Z              1.636     0.007      0.007        0.042
+VDLFL6   WITH VDMDE5Z              0.754    -0.004     -0.004       -0.024
+VDLFL6   WITH VDMRE1Z              1.423    -0.002     -0.002       -0.039
+VDLFL6   WITH VDMRE2Z              0.006     0.000      0.000        0.002
+VDLFL6   WITH VDEXF1Z              2.057     0.005      0.005        0.047
+VDLFL6   WITH VDEXF2Z             10.183    -0.013     -0.013       -0.110
+VDLFL6   WITH VDEXF7Z              3.888    -0.007     -0.007       -0.057
+VDLFL6   WITH VDASP1Z              8.666    -0.010     -0.010       -0.137
+VDLFL6   WITH VDASP2Z              4.516    -0.004     -0.004       -0.071
+VDLFL6   WITH VDASP3               8.820     0.066      0.066        0.098
+VDLFL6   WITH VDASP4Z              0.186    -0.001     -0.001       -0.012
+VDLFL6   WITH VDASP5Z              0.082    -0.001     -0.001       -0.008
+VDLFL6   WITH VDLFL1Z              2.199    -0.004     -0.004       -0.050
+VDLFL6   WITH VDLFL2               0.146     0.011      0.011        0.018
+VDLFL6   WITH VDLFL3              21.585     0.210      0.210        0.326
+VDLFL6   WITH VDLFL4               2.632     0.051      0.051        0.072
+VDLFL6   WITH VDLFL5              12.586     0.119      0.119        0.160
+CERADWL  WITH MDE                  0.187     0.000      0.012        0.012
+CERADWL  WITH EXF                 33.825    -0.001     -0.107       -0.107
+CERADWL  WITH LFL                 37.694    -0.001     -0.163       -0.163
+LM       WITH MDE                  1.192     0.001      0.032        0.032
+LM       WITH EXF                  2.036     0.000      0.028        0.028
+LM       WITH LFL                  6.990     0.001      0.078        0.078
+LM       WITH CERADWL              5.249     0.001      0.123        0.123
+VDVIS1Z  WITH CERADWL              8.086    -0.001     -0.018       -0.085
+VDVIS1Z  WITH LM                  10.045    -0.002     -0.021       -0.100
+VDORI1Z  WITH CERADWL            312.646     0.004      0.059        0.441
+VDORI1Z  WITH LM                  28.322    -0.002     -0.021       -0.156
+
+
+     Beginning Time:  09:11:22
+        Ending Time:  09:11:23
+       Elapsed Time:  00:00:01
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2018 Muthen & Muthen
