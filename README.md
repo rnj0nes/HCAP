@@ -22,6 +22,7 @@ This repo provides documentation and files related to data analysis for a factor
 |Model IX, combine Set shifting and attention, speed|[Model X](https://github.com/rnj0nes/HCAP/blob/master/model-X.out)|
 |Second order factor model based on model X|[Model XI](https://github.com/rnj0nes/HCAP/blob/master/model-XI.out)|
 
+There is also a file with [sample statistics]() (means, proportions, variances, covariances, missing data [covariance coverage]).
 
 
 # References
